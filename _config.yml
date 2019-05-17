@@ -8,7 +8,7 @@ logo:               'assets/img/logo.png'
 background:         'assets/img/placeholder-big.jpg'
 tiled_bg:           false
 locale:             en_US
-url:                https://3ecret.ir
+url:                https://arash-hatami.ir
 
 # Jekyll
 permalink:          /:title/
