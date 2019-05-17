@@ -1,0 +1,83 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="fa">
+<![endif]-->
+<!--[if (IE 7)&!(IEMobile)]>
+<html class="no-js lt-ie9 lt-ie8" lang="fa">
+<![endif]-->
+<!--[if (IE 8)&!(IEMobile)]>
+<html class="no-js lt-ie9" lang="fa">
+<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="fa">
+<!--<![endif]-->
+{% include head.html %}
+<body>
+{% include nav.html %}
+<header class="header" role="banner">
+    <div class="wrapper animated fadeIn">
+        <div class="content">
+            <div class="post-title {% if page.feature %} feature {% endif %}">
+                <h1 style="direction: rtl">
+                    {{ page.title }}
+                </h1>
+                <h4>{{ page.date | pdate }}</h4>
+                {% if site.reading_time and page.project == null %}
+                    <p class="reading-time" style="direction: rtl">
+                        <i class="fa fa-clock-o"></i>
+                        {% include read-time.html %}
+                    </p>
+                {% endif %}
+                {% if page.project %}
+                    <a class="btn zoombtn" href="{{site.url}}/projects/" style="border-radius: 15px;">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                {% else %}
+                    <a class="btn zoombtn" href="{{site.url}}/posts/" style="border-radius: 15px;">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>
+                {% endif %}
+            </div>
+            <div dir="rtl">
+                {{ content }}
+            </div>
+            {% if page.project %}
+            <h2>لینک ها</h2>
+            {% endif %}
+            <div class="entry-meta">
+                {% if page.project == null %}
+                <h4>
+                    <span>منبع : </span>
+                    {{ page.source }}
+                </h4>
+                {% else %}
+                <h4>
+                    <span>منبع : </span>
+                    <a href="{{ page.source }}" target="_blank">
+                        {{ page.source }}
+                    </a>
+                </h4>
+                <h4>
+                    <span>وب سایت : </span>
+                    <a href="{{ page.website }}" target="_blank">
+                        {{ page.website }}
+                    </a>
+                </h4>
+                {% endif %}
+                {% include meta.html %}
+            </div>
+        </div>
+    </div>
+    {% if page.comments and site.disqus_shortname %}
+    <section id="disqus_thread" class="animated fadeInUp"></section>
+    {% endif %}
+</header>
+{% include scripts.html %}
+{% if site.mathjax == true %}
+<script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+{% endif %}
+</body>
+</html>

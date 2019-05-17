@@ -1,0 +1,138 @@
+/*
+ * Copyright (c) 2019. Arash Hatami
+ */
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/eot/iranyekanwebboldfanum.eot');
+    src: url('../fonts/eot/iranyekanwebboldfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanwebboldfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebboldfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 100;
+    src: url('../fonts/eot/iranyekanwebthinfanum.eot');
+    src: url('../fonts/eot/iranyekanwebthinfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanwebthinfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebthinfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/eot/iranyekanweblightfanum.eot');
+    src: url('../fonts/eot/iranyekanweblightfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanweblightfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanweblightfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/iranyekanwebregularfanum.eot');
+    src: url('../fonts/eot/iranyekanwebregularfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanwebregularfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebregularfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/eot/iranyekanwebregularfanum.eot');
+    src: url('../fonts/eot/iranyekanwebregularfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanwebregularfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebregularfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/eot/iranyekanwebmediumfanum.eot');
+    src: url('../fonts/eot/iranyekanwebmediumfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanwebmediumfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebmediumfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 800;
+    src: url('../fonts/eot/iranyekanwebextraboldfanum.eot');
+    src: url('../fonts/eot/iranyekanwebextraboldfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanwebextraboldfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebextraboldfanum.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: iranyekan;
+    font-style: normal;
+    font-weight: 900;
+    src: url('../fonts/eot/iranyekanwebblackfanum.eot');
+    src: url('../fonts/eot/iranyekanwebblackfanum.eot?#iefix') format('embedded-opentype'), /* IE6-8 */
+    url('../fonts/woff/iranyekanwebblackfanum.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+    url('../fonts/ttf/iranyekanwebblackfanum.ttf') format('truetype');
+}
+
+.font {
+    font-family: iranyekan, sans-serif;
+}
+
+body {
+    font-family: iranyekan, sans-serif !important;
+}
+
+.post-list ul {
+    padding-right: unset;
+}
+
+.post-list ul li:not(:last-child) {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 30px;
+}
+
+.post-list ul li:not(:first-child) {
+    padding-top: 30px;
+}
+
+.content h2 {
+    text-align: center;
+    color: #FF4136;
+}
+
+.content img {
+    border-radius: 15px;
+}
+
+.entry-meta h4 {
+    color: black;
+    text-align: right;
+    direction: rtl;
+}
+
+.entry-meta a {
+    text-decoration: none;
+    color: black;
+    text-transform: none;
+    transition: 0.3s;
+}
+
+.entry-meta a:hover {
+    color: #FF4136;
+}
+
+.entry-meta h4 span {
+    color: #FF4136;
+}
+
+pre {
+    direction: ltr;
+}
