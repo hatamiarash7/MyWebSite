@@ -62,6 +62,10 @@
     }}/{{ background }}{% endcapture %}{% endunless %}
     <style type="text/css">body {
         background-image: url({{ background }});
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }</style>
     {% endif %}
     {% if page.feature %}
@@ -70,6 +74,10 @@
     }}{% endcapture %}{% endunless %}
     <style type="text/css">.feature {
         background-image: url({{ feature }});
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
     }</style>
     {% endif %}
 </head>
