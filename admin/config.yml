@@ -3,6 +3,8 @@ backend:
     repo: hatamiarash7/MyWebSite
     branch: master
     site_domain: arash-hatami.ir
+    accept-roles:
+        - admin
 
 media_folder: "assets/img/upload"
 
