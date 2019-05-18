@@ -4,7 +4,7 @@ project: true
 title: "کتابخانه Toast برای اندروید"
 date: 2019-05-17
 excerpt: "توضیحات"
-tags: [تست]
+tags: [android,ui,اندروید,رابط کاربری]
 comments: false
 source: "https://github.com/hatamiarash7/RTL-Toast"
 website: "https://github.com/hatamiarash7/RTL-Toast"
