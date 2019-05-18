@@ -11,7 +11,7 @@ comments: false
 
 ![tooltip](/assets/img/posts/16.jpg)
 
-## کاری کنید تا با تغییر تب، محتوا به صورت اسلاید ظاهر شوند
+## کاری کنید تا با تغییر تب ، محتوا به صورت اسلاید ظاهر شوند
 
 ![tooltip](/assets/img/posts/17.gif)
 
