@@ -49,10 +49,12 @@ layout: compress
             {% endif %}
             <div class="entry-meta">
                 {% if page.project == null %}
-                <h4>
-                    <span>منبع : </span>
-                    {{ page.source }}
-                </h4>
+                    {% if page.source %}
+                        <h4>
+                            <span>منبع : </span>
+                            {{ page.source }}
+                        </h4>
+                    {% endif %}
                 {% else %}
                 <h4>
                     <span>منبع : </span>
