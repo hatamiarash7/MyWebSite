@@ -90,6 +90,20 @@ body {
     font-family: iranyekan, sans-serif !important;
 }
 
+p, h1, h2, h3, h4, h5, h6, span, i, div, small {
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+}
+
+pre, pre code, pre code span {
+    user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -webkit-user-select: text;
+}
+
 .post-list ul {
     padding-right: unset;
 }
@@ -135,4 +149,8 @@ body {
 
 pre {
     direction: ltr;
+}
+
+.social-btn i.fa {
+    transform: translateY(10%);
 }
