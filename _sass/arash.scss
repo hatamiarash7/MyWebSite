@@ -122,6 +122,10 @@ pre, pre code, pre code span {
     color: #FF4136;
 }
 
+.content h3 {
+    color: #FF4136;
+}
+
 .content img {
     border-radius: 15px;
 }
@@ -147,8 +151,9 @@ pre, pre code, pre code span {
     color: #FF4136;
 }
 
-pre {
-    direction: ltr;
+pre, code, code.highlighter-rouge {
+    direction: ltr !important;
+    text-align: left !important;
 }
 
 .social-btn i.fa {
