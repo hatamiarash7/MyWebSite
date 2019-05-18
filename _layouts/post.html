@@ -16,7 +16,7 @@ layout: compress
 <!--<![endif]-->
 {% include head.html %}
 <body>
-{% include nav.html %}
+{% include_cached nav.html %}
 <header class="header" role="banner">
     <div class="wrapper animated fadeIn">
         <div class="content">
@@ -26,19 +26,19 @@ layout: compress
                 </h1>
                 <h4>{{ page.date | pdate }}</h4>
                 {% if site.reading_time and page.project == null %}
-                    <p class="reading-time" style="direction: rtl">
-                        <i class="fa fa-clock-o"></i>
-                        {% include read-time.html %}
-                    </p>
+                <p class="reading-time" style="direction: rtl">
+                    <i class="fa fa-clock-o"></i>
+                    {% include_cached read-time.html %}
+                </p>
                 {% endif %}
                 {% if page.project %}
-                    <a class="btn zoombtn" href="{{site.url}}/projects/" style="border-radius: 15px;">
-                        <i class="fa fa-chevron-left"></i>
-                    </a>
+                <a class="btn zoombtn" href="{{site.url}}/projects/" style="border-radius: 15px;">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
                 {% else %}
-                    <a class="btn zoombtn" href="{{site.url}}/posts/" style="border-radius: 15px;">
-                        <i class="fa fa-chevron-left"></i>
-                    </a>
+                <a class="btn zoombtn" href="{{site.url}}/posts/" style="border-radius: 15px;">
+                    <i class="fa fa-chevron-left"></i>
+                </a>
                 {% endif %}
             </div>
             <div dir="rtl">
@@ -49,12 +49,12 @@ layout: compress
             {% endif %}
             <div class="entry-meta">
                 {% if page.project == null %}
-                    {% if page.source %}
-                        <h4>
-                            <span>منبع : </span>
-                            {{ page.source }}
-                        </h4>
-                    {% endif %}
+                {% if page.source %}
+                <h4>
+                    <span>منبع : </span>
+                    {{ page.source }}
+                </h4>
+                {% endif %}
                 {% else %}
                 <h4>
                     <span>منبع : </span>
@@ -69,7 +69,7 @@ layout: compress
                     </a>
                 </h4>
                 {% endif %}
-                {% include meta.html %}
+                {% include_cached meta.html %}
             </div>
         </div>
     </div>
@@ -77,7 +77,7 @@ layout: compress
     <section id="disqus_thread" class="animated fadeInUp"></section>
     {% endif %}
 </header>
-{% include scripts.html %}
+{% include_cached scripts.html %}
 {% if site.mathjax == true %}
 <script async src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
 {% endif %}

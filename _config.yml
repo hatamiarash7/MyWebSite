@@ -69,6 +69,7 @@ plugins:
     - jekyll-sitemap
     - jekyll-gist
     - jekyll_pdate_plugin
+    - jekyll-include-cache
 
 jekyll-mentions:
     base_url: https://github.com

@@ -15,10 +15,10 @@ layout: compress
 <html class="no-js">
 <!--<![endif]-->
 <head>
-    {% include head.html %}
+    {% include_cached head.html %}
 </head>
 <body>
-{% include nav.html %}
+{% include_cached nav.html %}
 <!-- Header -->
 <header class="header flex" role="banner">
     <div class="container animated fadeIn" style="border-radius: 15px">
@@ -37,7 +37,7 @@ layout: compress
                     <p style="font-size:1rem;font-weight:300">{{ site.bio }}</p>
                 </a>
             </h3>
-            {% include social-links.html %}
+            {% include_cached social-links.html %}
             <hr class="hr-line">
             <h3 class="title">
                 <a class="btn zoombtn" href="{{ site.url }}/about">
@@ -53,6 +53,6 @@ layout: compress
         </div>
     </div>
 </header>
-{% include scripts.html %}
+{% include_cached scripts.html %}
 </body>
 </html>

@@ -11,10 +11,10 @@ layout: compress
 <!--[if gt IE 8]><!-->
 <html class="no-js"><!--<![endif]-->
 <head>
-    {% include head.html %}
+    {% include_cached head.html %}
 </head>
 <body>
-{% include nav.html %}
+{% include_cached nav.html %}
 <!-- Header -->
 <header class="header" role="banner">
     <div class="wrapper animated fadeIn">
@@ -43,7 +43,7 @@ layout: compress
         </div>
     </div>
 </header>
-{% include scripts.html %}
+{% include_cached scripts.html %}
 <script src="{{ site.url }}/assets/js/wow.min.js"></script>
 <script type="text/javascript">(new WOW).init();</script>
 </body>
