@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "جنگ نهایی CSS : گرید در برابر Flexbox"
-date: 2019-05-18 12:22
+date: 2019-05-18
 excerpt: "در این مطلب به بررسی دو ساختار متفاوت برای قالب بندی اجزا در سایت می پردازیم"
 tags: [html,css,flexbox,cssgrid,web,web design,طراحی وب]
 comments: false
