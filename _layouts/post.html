@@ -15,6 +15,13 @@ layout: compress
 <html class="no-js" lang="fa">
 <!--<![endif]-->
 {% include head.html %}
+<style>
+    .bar {
+        height: 3px !important;
+        background-color: #FF4136 !important;
+        box-shadow: 0 0 10px 0 rgba(255, 65, 54, 0.75);
+    }
+</style>
 <body>
 {% include_cached nav.html %}
 <header class="header" role="banner">
@@ -78,5 +85,11 @@ layout: compress
     {% endif %}
 </header>
 {% include_cached scripts.html %}
+<script src="{{ site.url }}/assets/js/prognroll.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("body").prognroll();
+    });
+</script>
 </body>
 </html>
