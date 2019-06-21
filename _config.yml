@@ -24,39 +24,11 @@ sass:
     sass_dir:         _sass
     style:            compressed
 
-    # Social
-    # if you don't have any of social below, comment the line.
-#google:
-#plus:            #username
-#analytics:
-#verify:
-#ad-client:
-#ad-slot:
-#bing-verify:
 email:  hatamiarash7@gmail.com
-#twitter:            hatamiarash7
-#facebook:           hatamiarash7
 github-url:         hatamiarash7
 stackoverflow:     4905220/arash-hatami
 linkedin:          hatamiarash7
-#xing:              username
 instagram:          hatamiarash7
-#lastfm:            username
-#tumblr:            username
-#medium:            '@username'
-#pinterest:         username
-#foursquare:        username
-#steam:              hatamiarash7
-#dribbble:          username
-#youtube:           username
-#youtube-channel:   channel
-#soundcloud:        username
-#weibo:             username
-#flickr:            username
-#codepen:           username
-#keybase:           username
-#xmpp:              username@server.com
-#hackernews:        username
 
 # Gems
 plugins:
