@@ -46,5 +46,3 @@ jekyll-mentions:
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
 
 pdate_filter: "%A %d %B %Y"
-
-theme: jekyll-theme-cayman
