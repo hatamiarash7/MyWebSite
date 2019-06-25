@@ -3,7 +3,7 @@ layout: post
 title: "رزبری پای 4 معرفی شد"
 date: 2019-06-25 20:54
 excerpt: "میکرو کامپیوتر Raspberry Pi 4 نوع B، محصولی جدید با سخت افزارهای بروز شده است. ارتقاء قابل توجهی به نسل Raspberry Pi 3 صورت گرفته است که در ادامه با آنها آشنا خواهیم شد."
-tags: [raspberry pi,raspberry pi 4,رزبری پای 4,رزبری,رزبری پای]
+tags: [raspberry pi,iot,raspberry pi 4,رزبری پای 4,رزبری,رزبری پای]
 comments: false
 ---
 
