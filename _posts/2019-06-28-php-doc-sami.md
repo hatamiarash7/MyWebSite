@@ -3,7 +3,7 @@ layout: post
 title: "ساخت مستندات برای پروژه Laravel"
 date: 2019-06-28 12:21
 excerpt: "یکی از دغدغه های روزهای اخیر خودم ، ساخت مستندات برای پروژه هایی بود که با لاراول توسعه داده شده اند. به دنبال سریع ترین و ساده ترین راه بودم که این کار رو انجام بدم. راه حل ها و روش ها رو میخوام باهاتون در میون بذارم."
-tags: [laravel,php,documenting,documentation,phpdoc,لاراول,مستندسازی,مستندات]
+tags: [laravel,php,documenting,docblock,sami,php sami,documentation,phpdoc,لاراول,مستندسازی,مستندات]
 comments: false
 ---
 
