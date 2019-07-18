@@ -24,11 +24,11 @@ sass:
     sass_dir:         _sass
     style:            compressed
 
-email:  hatamiarash7@gmail.com
-github-url:         hatamiarash7
-stackoverflow:     4905220/arash-hatami
-linkedin:          hatamiarash7
-instagram:          hatamiarash7
+email:          hatamiarash7@gmail.com
+github-url:     hatamiarash7
+stackoverflow:  4905220/arash-hatami
+linkedin:       hatamiarash7
+instagram:      hatamiarash7
 
 # Gems
 plugins:
@@ -38,9 +38,15 @@ plugins:
     - jekyll-gist
     - jekyll_pdate_plugin
     - jekyll-include-cache
+    - jekyll-analytics
 
 jekyll-mentions:
     base_url: https://github.com
+
+jekyll_analytics:
+    GoogleAnalytics:
+        id: UA-65859337-10
+        anonymizeIp: false
 
 # Exclude list
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
