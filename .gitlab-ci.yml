@@ -1,0 +1,27 @@
+image: ruby:2.3
+
+stages:
+    - deploy
+
+variables:
+    JEKYLL_ENV: production
+    LC_ALL: C.UTF-8
+
+cache:
+    paths:
+        - vendor
+    key: "$CI_BUILD_REPO"
+
+before_script:
+    - gem install bundler
+
+deploy_site:
+    stage: deploy
+    only:
+        - master
+    script:
+        - bundle install --path=vendor/
+        - bundle exec jekyll build
+    artifacts:
+        paths:
+            - _site/
