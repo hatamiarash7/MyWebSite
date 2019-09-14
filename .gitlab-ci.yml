@@ -16,7 +16,7 @@ before_script:
     - gem install bundler
 
 build site:
-    stage: deploy
+    stage: build
     only:
         - master
     script:
