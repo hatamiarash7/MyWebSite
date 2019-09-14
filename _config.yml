@@ -52,3 +52,13 @@ jekyll_analytics:
 exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, CNAME, LICENSE, Rakefile]
 
 pdate_filter: "%A %d %B %Y"
+
+staticman:
+    repository: "hatamiarash7/MyWebSite"
+    branch: master
+    endpoint: # URL of your own deployment, with a trailing slash (will fallback to a public GitLab instance) eg. https://<your-api>/v3/entry/github/
+    reCaptcha:
+        # reCaptcha for Staticman (OPTIONAL, but recommended for spam protection)
+        # If you use reCaptcha, you must also set these parameters in staticman.yml
+        siteKey: # Use your own site key, you need to apply for one on Google
+        secret: # ENCRYPT your password by going to https://staticman3.herokuapp.com/v3/encrypt/<your-site-secret>
