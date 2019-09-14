@@ -1,7 +1,7 @@
 image: ruby:2.3
 
 stages:
-    - deploy
+    - build
 
 variables:
     JEKYLL_ENV: production
@@ -15,7 +15,7 @@ cache:
 before_script:
     - gem install bundler
 
-deploy_site:
+build site:
     stage: deploy
     only:
         - master
