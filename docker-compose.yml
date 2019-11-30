@@ -3,9 +3,9 @@ version: '3'
 services:
     jekyll:
         image: jekyll/jekyll:4.0.0
-        command: bundle exec jekyll serve --config _config.yml,_dev_config.yml --watch --force_polling --verbose -H 0.0.0.0
+        command: bundle exec jekyll serve --config _dev_config.yml --watch --force_polling --verbose -H 0.0.0.0
         restart: always
-        environment: 
+        environment:
             - JEKYLL_ENV=production
         ports:
             - 4000:4000
