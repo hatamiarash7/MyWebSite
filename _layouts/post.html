@@ -76,6 +76,14 @@ layout: compress
                         {{ page.website }}
                     </a>
                 </h4>
+                {% if page.source_android %}
+                <h4>
+                    <span>اندروید : </span>
+                    <a href="{{ page.source_android }}" target="_blank">
+                        {{ page.source_android }}
+                    </a>
+                </h4>
+                {% endif %}
                 {% endif %}
                 {% include meta.html %}
             </div>
