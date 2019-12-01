@@ -6,8 +6,8 @@ date: 2019-05-15
 comments: false
 ---
 
-Full Stack Developer, Ateriad CGRC
+{{ site.bio }}
 
-**Email** : hatamiarash7@gmail.com
+**Email** : info@arash-hatami.ir
 
 **Phone** : +98 918 218 0519
