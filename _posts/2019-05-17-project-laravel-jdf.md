@@ -3,7 +3,7 @@ layout: post
 project: true
 title: "کتابخانه تاریخ فارسی برای Laravel"
 date: 2019-05-17
-excerpt: "با استفاده از این کتابخانه به راحتی می توانید از تاریخ فارسی در پروزه لاراول خود استفاده کنید"
+excerpt: "با استفاده از این کتابخانه به راحتی می توانید از تاریخ فارسی در پروژه لاراول خود استفاده کنید"
 tags: [jdf,php,laravel,date]
 comments: false
 source: "https://github.com/hatamiarash7/Laravel-JDF"
