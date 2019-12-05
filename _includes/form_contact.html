@@ -1,14 +1,28 @@
-<form name="contact" method="POST" data-netlify="true">
-    <p>
-        <label>Your Name: <input type="text" name="name"/></label>
-    </p>
-    <p>
-        <label>Your Email: <input type="email" name="email"/></label>
-    </p>
-    <p>
-        <label>Message: <textarea name="message"></textarea></label>
-    </p>
-    <p>
-        <button type="submit">Send</button>
-    </p>
+<div class="post-title">
+    <h1>تماس با من</h1>
+</div>
+<form class="contact1-form validate-form" name="contact" method="POST" data-netlify="true">
+    <div class="wrap-input1 validate-input" data-validate="نام خود را وارد کنید">
+        <input class="input1" type="text" name="name" placeholder="نام شما" autocomplete="name" required>
+        <span class="shadow-input1"></span>
+    </div>
+
+    <div class="wrap-input1 validate-input" data-validate="ایمیل خود را وارد کنید">
+        <input class="input1" type="text" name="email" placeholder="ایمیل شما" autocomplete="email" required>
+        <span class="shadow-input1"></span>
+    </div>
+
+    <div class="wrap-input1 validate-input" data-validate="متن پیام اجباری است">
+        <textarea class="input1" name="message" placeholder="متن پیام" required></textarea>
+        <span class="shadow-input1"></span>
+    </div>
+
+    <div class="container-contact1-form-btn">
+        <button class="contact1-form-btn">
+            <span>
+                <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                ارسال
+            </span>
+        </button>
+    </div>
 </form>
