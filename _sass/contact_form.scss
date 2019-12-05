@@ -28,16 +28,6 @@ textarea {
     }
 }
 
-button.contact1-form-btn {
-    outline: none !important;
-    border: none;
-    background: transparent;
-
-    &:hover {
-        cursor: pointer;
-    }
-}
-
 .contact1-form-title {
     display: block;
     font-family: iranyekan, sans-serif;
@@ -99,7 +89,7 @@ textarea.input1 {
     width: 100%;
     height: 100%;
     box-shadow: 0 0 0 0;
-    color: rgba(87, 184, 70, 0.5);
+    color: rgba(255, 65, 54, 0.5);
 }
 
 .input1:focus + .shadow-input1 {
@@ -132,10 +122,12 @@ textarea.input1 {
 }
 
 .contact1-form-btn {
+    outline: none !important;
+    border: none;
     min-width: 193px;
     height: 50px;
     border-radius: 15px;
-    background: #57b846;
+    background: #ff4136;
     font-family: iranyekan, sans-serif;
     font-size: 15px;
     line-height: 1.5;
@@ -163,6 +155,7 @@ textarea.input1 {
 
     &:hover {
         background: #333333;
+        cursor: pointer;
 
         i {
             -webkit-transform: translateX(-10px);
