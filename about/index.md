@@ -1,9 +1,9 @@
 ---
 layout: page
 title: About Me
-tags: [about, arash, hatami, arash hatami]
+tags: [arash, hatami, arash hatami, آرش حاتمی]
 date: 2019-05-15
-comments: false
+comments: true
 ---
 
 {{ site.bio }}
