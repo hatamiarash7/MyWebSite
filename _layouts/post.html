@@ -92,31 +92,9 @@ layout: compress
     {% if page.comments %}
     <div class="wrapper animated fadeIn">
         <div class="content">
-    <form name="comments" data-netlify="true" method="post" netlify-honeypot="bot-field" action="https://api.staticman.net/v3/entry/hatamiarash7/MyWebSite/master/comments">
-
-        <input name="slug" hidden type="hidden" value="{{ page.slug }}">
-
-        <label for="name" >Name</label>
-        <input name="name" id="name" type="text" required>
-
-        <label for="email" class="c-lh-title db f7 c-lh-title mb1">Email</label>
-        <input name="email" id="email" type="email"  required>
-
-        <label for="message" class="c-lh-title db f7 c-lh-title mb1">Comment</label>
-        <textarea name="message" id="message" required></textarea>
-
-        <div hidden class="clip">
-
-            <label for="hp" class="c-lh-title db f7 c-lh-title mb1">Complete this if you don't want your comment to appear</label>
-            <input name="bot-field" id="hp" type="text" class="mb3 pa1 ba b--moon-gray border-box w-100 w-50-l">
-
+            {% include form_contact.html %}
         </div>
-
-        <button class="db pa2 ba b--moon-gray br1 bg-blue hover-bg-dark-blue white pointer" type="submit">Submit comment</button>
-
-    </form>
-        </div>
-        </div>
+    </div>
     {% endif %}
 </header>
 {% include_cached scripts.html %}
