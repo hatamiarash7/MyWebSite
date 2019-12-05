@@ -34,7 +34,11 @@ layout: compress
         </div>
     </div>
     {% if page.comments %}
-
+    <div class="wrapper animated fadeIn">
+        <div class="content">
+            {% include form_contact.html %}
+        </div>
+    </div>
     {% endif %}
 </header>
 {% include_cached scripts.html %}
