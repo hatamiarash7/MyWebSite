@@ -1,5 +1,5 @@
 # Site
-title:              Arash Hatami
+title:              Arash Hatami - Dev
 bio:                "Full Stack Developer / Network Engineer"
 description:        "Full Stack Developer / Network Engineer"
 reading_time:       true
@@ -8,7 +8,7 @@ logo:               "assets/img/logo.webp"
 background:         "assets/img/placeholder-big.webp"
 tiled_bg:           false
 locale:             en_US
-url:                http://127.0.0.1:4000
+url:                http://localhost:4000
 
 # Jekyll
 permalink:          /:title/
@@ -49,6 +49,6 @@ jekyll_analytics:
         anonymizeIp: false
 
 # Exclude list
-exclude: [README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, docker, CNAME, LICENSE, Rakefile]
+exclude: [.sass-cache, .idea, .github, README.md, Gemfile, Gemfile.lock, node_modules, gulpfile.js, package.json, _site, src, vendor, docker, CNAME, LICENSE, Rakefile]
 
 pdate_filter: "%A %d %B %Y"
