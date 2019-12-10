@@ -5,7 +5,6 @@ date: 2019-12-08 12:36
 excerpt: "اصول SOLID به پنج قسمت قسمت تقسیم میشه که از مهمترین اصول توی برنامه‌نویسی شی‌گرا به حساب میان"
 tags: [solid, solid principles, اصول solid, اصول سالید, Single Responsibility Principle, Open/Closed Principle, Liskov Substitution Principle, Interface Segregation Principle, Dependency Inversion Principle]
 comments: false
-source: "دیتی"
 ---
 
 اصول SOLID به پنج قسمت قسمت تقسیم میشه که از مهمترین اصول توی برنامه‌نویسی شی‌گرا به حساب میان
