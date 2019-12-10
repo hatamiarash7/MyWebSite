@@ -3,6 +3,7 @@ version: '3'
 services:
     jekyll:
         image: jekyll/jekyll:4.0.0
+        container_name: arash_website
         command: bundle exec jekyll serve --config _dev_config.yml --watch --force_polling --verbose -H 0.0.0.0
         restart: always
         environment:
