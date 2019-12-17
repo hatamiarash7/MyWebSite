@@ -3,7 +3,7 @@ layout: post
 title: "امنیت BGP یا BGPSec"
 date: 2019-12-16 12:41
 excerpt: "BGPSec سعی ‌میکند اطمینان ‌خاطر دهد که BGP Update دریافت شده توسط هر Peer به درستی مسیری را ارائه‌ میکند که پیغام از فرستنده تا گیرنده طی کرده است."
-tags: []
+tags: [شبکه, امنیت, bgpsec, bgpsec چیست, امنیت bgp, rpki]
 comments: false
 ---
 
