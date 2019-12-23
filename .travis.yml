@@ -20,10 +20,6 @@ addons:
     packages:
       - libcurl4-openssl-dev
 
-branches:
-  only:
-    - release
-
 jobs:
   include:
     - stage: Test
