@@ -1,15 +1,37 @@
+sudo: false
+
+dist: trusty
+
 language: ruby
 
 cache: bundler
 
-script:
-    - JEKYLL_ENV=production bundle exec jekyll build --destination site
+rvm:
+  - 2.5.3
 
-deploy:
-    provider: pages
-    local-dir: ./site
-    target-branch: master
-    email: hatamiarash7@gmail.com
-    name: Deployment Bot
-    skip-cleanup: true
-    keep-history: true
+bundler_args: --without development
+
+env:
+  global:
+    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
+
+addons:
+  apt:
+    packages:
+      - libcurl4-openssl-dev
+
+branches:
+  only:
+    - release
+
+jobs:
+  include:
+    - stage: Test
+      before_script:
+        - npm install -g sass-lint htmllint-cli markdownlint-cli
+      script:
+        - JEKYLL_ENV=production bundle exec jekyll build
+        - htmllint _includes/stripped_markdown.html
+        - markdownlint _posts _drafts _pages README.md
+        - sass-lint --verbose --no-exit
+        - bundle exec htmlproofer _site --allow-hash-href --assume-extension --url-ignore "/localhost/" --http-status-ignore "999"
