@@ -180,7 +180,7 @@ body {
 
         .count {
             background-color: darken($white, 15);
-            @include border-radius(3px, 3px, 0, 0);
+            @include border-radius(0, 0, 3px, 3px);
         }
 
         &:hover {
