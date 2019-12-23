@@ -23,8 +23,6 @@ addons:
 jobs:
   include:
     - stage: Test
-      before_script:
-        - npm install -g sass-lint htmllint-cli markdownlint-cli
       script:
         - JEKYLL_ENV=production bundle exec jekyll build
-        - bundle exec htmlproofer _site --allow-hash-href --assume-extension --url-ignore "/localhost/" --http-status-ignore "999"
+        - bundle exec _site --allow-hash-href --assume-extension --url-ignore "/localhost/" --http-status-ignore "999"
