@@ -1,25 +1,16 @@
 language: ruby
 
-rvm:
-    - 2.6.3
-
-before_script:
-    - chmod +x ./script/cibuild
-
-script: ./script/cibuild
-
-env:
-    global:
-        - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-
-addons:
-    apt:
-        packages:
-            - libcurl4-openssl-dev
-
-sudo: false
-
 cache: bundler
 
-notifications:
-    email: false
+script:
+    - JEKYLL_ENV=production bundle exec jekyll build --destination site
+
+deploy:
+    provider: pages
+    local-dir: ./site
+    target-branch: master
+    email: hatamiarash7@gmail.com
+    name: Deployment Bot
+    skip-cleanup: true
+    github-token: $GITHUB_TOKEN
+    keep-history: true
