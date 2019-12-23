@@ -12,5 +12,4 @@ deploy:
     email: hatamiarash7@gmail.com
     name: Deployment Bot
     skip-cleanup: true
-    github-token: $GITHUB_TOKEN
     keep-history: true
