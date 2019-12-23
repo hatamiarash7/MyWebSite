@@ -121,10 +121,12 @@ pre {
     h2 {
         text-align: center;
         color: #FF4136;
+        direction: rtl;
     }
 
     h3 {
         color: #FF4136;
+        direction: rtl;
     }
 
     img {
@@ -202,4 +204,12 @@ b, strong {
 
 .author-photo {
     background-color: unset !important;
+}
+
+header .entry-meta {
+    direction: rtl;
+}
+
+article ul {
+    direction: rtl;
 }
