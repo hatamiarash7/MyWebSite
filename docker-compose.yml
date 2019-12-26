@@ -9,7 +9,7 @@ services:
         environment:
             - JEKYLL_ENV=production
         ports:
-            - 4000:4000
+            - 13003:4000
         volumes:
             - .:/srv/jekyll
             - ./docker/bundle:/usr/local/bundle
