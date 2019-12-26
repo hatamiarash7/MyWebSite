@@ -4,7 +4,7 @@ services:
     jekyll:
         build:
             context: .
-            dockerfile: ./docker/Dockerfile
+            dockerfile: Dockerfile
         image: hatamiarash7/site
         container_name: arash_website
         restart: always
