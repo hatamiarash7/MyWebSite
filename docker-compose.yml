@@ -2,14 +2,17 @@ version: '3'
 
 services:
     jekyll:
-        image: jekyll/jekyll:4.0.0
+        build:
+            context: .
+            dockerfile: ./docker/Dockerfile
+        image: hatamiarash7/site
         container_name: arash_website
-        command: bundle exec jekyll serve --config _dev_config.yml --watch --force_polling --verbose -H 0.0.0.0
         restart: always
+        working_dir: /srv/jekyll
         environment:
             - JEKYLL_ENV=production
         ports:
             - 13003:4000
         volumes:
-            - .:/srv/jekyll
+            - ./:/srv/jekyll
             - ./docker/bundle:/usr/local/bundle

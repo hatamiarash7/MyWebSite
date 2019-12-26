@@ -1,11 +1,12 @@
-source "https://rubygems.org"
+source "http://rubygems.org"
 
+gem "i18n", "1.6.0"
 gem "jekyll", ">= 3.6.3"
 gem "jekyll-sitemap"
 gem "jekyll-gist"
-gem 'jekyll-mentions'
-gem 'jekyll-feed'
-gem 'wdm', '>= 0.1.0'
-gem 'jekyll_pdate_plugin'
-gem 'jekyll-include-cache'
-gem 'jekyll-analytics'
+gem "jekyll-mentions"
+gem "jekyll-feed"
+gem "wdm", ">= 0.1.0"
+gem "jekyll_pdate_plugin"
+gem "jekyll-include-cache"
+gem "jekyll-analytics"
