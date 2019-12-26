@@ -1,4 +1,4 @@
-version: '3'
+version: "3.7"
 
 services:
     jekyll:
@@ -15,4 +15,4 @@ services:
             - 13003:4000
         volumes:
             - ./:/srv/jekyll
-            - ./docker/bundle:/usr/local/bundle
+            - ./docker/bundle:/bundle
