@@ -1,1 +1,3 @@
-docker run --name arash_site --volume=${PWD}:/srv/jekyll:Z --volume=jekyllbundlecache:/usr/local/bundle --restart unless-stopped --env JEKYLL_ENV=production -p 13003:4000 jekyll/jekyll:4.0.0 jekyll serve --watch --force_polling
+# create network
+
+docker network create --gateway 172.28.0.1 --subnet 172.28.0.0/16 arash_network
