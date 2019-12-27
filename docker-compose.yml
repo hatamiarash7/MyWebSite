@@ -5,12 +5,22 @@ services:
     image: jekyll/jekyll:4.0.0
     container_name: arash_site
     restart: unless-stopped
-    # command: jekyll serve --watch --force_polling --verbose -H 0.0.0.0
-    command: jekyll serve --config _dev_config.yml --watch --force_polling --verbose -H 0.0.0.0
+    command: jekyll serve --watch --force_polling --verbose --trace
+    #command: jekyll serve --config _dev_config.yml --watch --force_polling --verbose -H 0.0.0.0
     volumes:
-      - .:/srv/jekyll
+      - .:/srv/jekyll:rw
       - /docker/bundle:/usr/local/bundle
     environment:
       - JEKYLL_ENV=production
     ports:
         - 13003:4000
+    networks:
+      arash_network:
+        ipv4_address: "172.28.0.2"
+
+networks:
+  default:
+    external:
+      name: arash_network
+  arash_network:
+    external: true
