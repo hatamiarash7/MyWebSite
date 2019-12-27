@@ -6,7 +6,6 @@ services:
     container_name: arash_site
     restart: unless-stopped
     command: jekyll serve --watch --force_polling --verbose --trace
-    #command: jekyll serve --config _dev_config.yml --watch --force_polling --verbose -H 0.0.0.0
     volumes:
       - .:/srv/jekyll:rw
       - /docker/bundle:/usr/local/bundle
