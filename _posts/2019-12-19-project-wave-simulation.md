@@ -4,7 +4,7 @@ project: true
 title: "شبیه سازی امواج آب"
 date: 2019-12-19
 excerpt: "شبیه سازی سه بعدی امواج آب با جاوا اسکریپت"
-tags: []
+tags: [simulation, waves, see waves, wave simulation, شبیه سازی]
 comments: false
 website: "http://waves.arash-hatami.ir"
 ---
