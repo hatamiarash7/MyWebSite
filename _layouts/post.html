@@ -64,18 +64,22 @@ layout: compress
                 </h4>
                 {% endif %}
                 {% else %}
+                {% if page.source %}
                 <h4>
                     <span>منبع : </span>
                     <a href="{{ page.source }}" target="_blank" rel="noopener noreferrer">
                         {{ page.source }}
                     </a>
                 </h4>
+                {% endif %}
+                {% if page.website %}
                 <h4>
                     <span>وب سایت : </span>
                     <a href="{{ page.website }}" target="_blank" rel="noopener noreferrer">
                         {{ page.website }}
                     </a>
                 </h4>
+                {% endif %}
                 {% if page.source_android %}
                 <h4>
                     <span>اندروید : </span>
