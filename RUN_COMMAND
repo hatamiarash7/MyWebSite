@@ -1,3 +1,0 @@
-# create network
-
-docker network create --gateway 172.28.0.1 --subnet 172.28.0.0/16 arash_network

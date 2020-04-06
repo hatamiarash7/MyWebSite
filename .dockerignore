@@ -1,8 +1,0 @@
-.git
-.idea
-vendor
-Dockerfile
-.gitignore
-.jekyll-metadata
-.jekyll-cache
-.sass-cache
