@@ -9,3 +9,6 @@ LICENSE
 README.md
 build
 docker
+.circleci
+.gitlab-ci.yml
+.travis.yml
