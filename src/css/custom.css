@@ -117,6 +117,7 @@ article .markdown p {
 article .markdown img {
     width: 100%;
     height: auto;
+    border-radius: 25px;
 }
 
 .avatar .avatar__photo + .avatar__intro {
