@@ -14,8 +14,6 @@ stages:
 
 build site:
   stage: build
-  tags:
-    - node
   only:
     - v2
   script:
