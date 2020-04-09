@@ -1,0 +1,13 @@
+version: "3"
+
+services:
+  app:
+    container_name: website_docusaurus
+    image: website_docusaurus
+    restart: unless-stopped
+    working_dir: /code
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
+    ports:
+      - 13006:3000

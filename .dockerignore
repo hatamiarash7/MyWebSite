@@ -1,0 +1,11 @@
+node_modules
+.github
+.vscode
+.docusaurus
+.gitignore
+.editorconfig
+.gitattributes
+LICENSE
+README.md
+build
+docker
