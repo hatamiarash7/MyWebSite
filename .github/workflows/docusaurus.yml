@@ -1,0 +1,25 @@
+name: Docusaurus
+
+on:
+  push:
+    branches:
+      - v2
+
+jobs:
+  build:
+    name: Build the site on ${{ matrix.os }} OS
+
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+      - uses: actions/checkout@v1
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: build
