@@ -63,8 +63,9 @@ function Feature({ imageUrl, title, description }) {
 function Home() {
     const context = useDocusaurusContext();
     const { siteConfig = {} } = context;
+
     return (
-        <Layout description="Description will go into a meta tag in <head />">
+        <Layout description="DevOps - SRE / Network Eng">
             <header
                 className={classnames("hero hero--primary", styles.heroBanner)}
             >
