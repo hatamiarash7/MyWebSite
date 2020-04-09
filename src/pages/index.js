@@ -8,7 +8,7 @@ import styles from "./styles.module.css";
 
 const features = [
     {
-        title: <>Easy to Use</>,
+        title: <>Programming</>,
         imageUrl: "img/intro-1.svg",
         description: (
             <>
@@ -54,7 +54,7 @@ function Feature({ imageUrl, title, description }) {
                     />
                 </div>
             )}
-            <h3>{title}</h3>
+            <h3 className="text--center">{title}</h3>
             <p>{description}</p>
         </div>
     );
@@ -82,7 +82,7 @@ function Home() {
                             )}
                             to={useBaseUrl("docs/doc1")}
                         >
-                            Get Started
+                            Projects
                         </Link>
                     </div>
                 </div>
