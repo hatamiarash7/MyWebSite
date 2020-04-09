@@ -1,5 +1,5 @@
 module.exports = {
-    title: "آرش حاتمی",
+    title: "Arash Hatami",
     tagline: "DevOps - SRE / Network Eng",
     url: "https://arash-hatami.ir",
     baseUrl: "/",
@@ -8,21 +8,21 @@ module.exports = {
     projectName: "MyWebSite",
     themeConfig: {
         navbar: {
-            title: "آرش حاتمی",
+            title: "Arash Hatami",
             logo: {
                 alt: "Logo",
                 src: "img/logo.svg",
             },
             links: [
                 {
-                    to: "docs/doc1",
-                    activeBasePath: "docs",
-                    label: "پروژه ها",
+                    to: "blog",
+                    label: "Blog",
                     position: "left",
                 },
                 {
-                    to: "blog",
-                    label: "نوشته ها",
+                    to: "docs/doc1",
+                    activeBasePath: "docs",
+                    label: "Projects",
                     position: "left",
                 },
             ],
@@ -31,7 +31,7 @@ module.exports = {
             style: "dark",
             links: [
                 {
-                    title: "دیگر سایت ها",
+                    title: "Another Websites",
                     items: [
                         {
                             label: "Code Guide",
@@ -44,7 +44,7 @@ module.exports = {
                     ],
                 },
                 {
-                    title: "پروفایل ها",
+                    title: "Community",
                     items: [
                         {
                             label: "GitHub",
@@ -59,10 +59,15 @@ module.exports = {
                             label: "Docker Hub",
                             href: "https://hub.docker.com/u/hatamiarash7",
                         },
+                        {
+                            label: "Packagist",
+                            href:
+                                "https://packagist.org/packages/hatamiarash7/",
+                        },
                     ],
                 },
                 {
-                    title: "شبکه های اجتماعی",
+                    title: "Social",
                     items: [
                         {
                             label: "LinkedIn",
