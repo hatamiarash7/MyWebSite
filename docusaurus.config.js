@@ -29,6 +29,10 @@ module.exports = {
         },
         footer: {
             style: "dark",
+            logo: {
+                alt: "Arash Hatami",
+                src: "img/logo-footer.svg",
+            },
             links: [
                 {
                     title: "Another Websites",
@@ -84,7 +88,7 @@ module.exports = {
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} Arash Hatami`,
+            copyright: `Copyright © ${new Date().getFullYear()}`,
         },
     },
     presets: [
@@ -99,7 +103,30 @@ module.exports = {
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
                 },
+                blog: {
+                    feedOptions: {
+                        type: "rss",
+                        copyright: `Copyright © ${new Date().getFullYear()} Arash Hatami.`,
+                        language: "fa",
+                    },
+                    path: "blog",
+                    routeBasePath: "blog",
+                    include: ["*.md"],
+                    postsPerPage: 15,
+                },
+                sitemap: {
+                    cacheTime: 600 * 1000,
+                    changefreq: "weekly",
+                    priority: 0.5,
+                },
             },
         ],
+    ],
+    scripts: [
+        "js/custom.js",
+        {
+            src: "//www.statcounter.com/counter/counter.js",
+            async: true,
+        },
     ],
 };
