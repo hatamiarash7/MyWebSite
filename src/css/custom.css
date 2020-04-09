@@ -89,8 +89,37 @@
     font-family: Vazir, sans-serif;
 }
 
-body,
-html {
+/* Article Section */
+
+article {
     direction: rtl;
     font-family: Vazir, sans-serif;
+}
+
+article footer.row {
+    flex-direction: column-reverse;
+}
+
+article footer.row .text--right {
+    display: none;
+}
+
+article footer.row .col strong {
+    display: none;
+}
+
+article .markdown p {
+    direction: rtl;
+    text-align: justify;
+    text-align-last: right;
+}
+
+article .markdown img {
+    width: 100%;
+    height: auto;
+}
+
+.avatar .avatar__photo + .avatar__intro {
+    margin-left: unset;
+    margin-right: var(--ifm-avatar-intro-margin);
 }
