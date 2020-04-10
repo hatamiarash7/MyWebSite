@@ -1,27 +1,20 @@
-image: ruby:2.3
-
-stages:
-    - build
-
-variables:
-    JEKYLL_ENV: production
-    LC_ALL: C.UTF-8
+image: node:10.19.0
 
 cache:
-    paths:
-        - vendor
-    key: "$CI_BUILD_REPO"
+  paths:
+    - node_modules/
+    - .yarn
 
 before_script:
-    - gem install bundler
+  - yarn config set cache-folder .yarn
+  - yarn install
+
+stages:
+  - build
 
 build site:
-    stage: build
-    only:
-        - master
-    script:
-        - bundle install --path=vendor/
-        - bundle exec jekyll build
-    artifacts:
-        paths:
-            - _site/
+  stage: build
+  only:
+    - v2
+  script:
+    - yarn build

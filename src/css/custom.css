@@ -1,0 +1,172 @@
+@font-face {
+    font-family: Vazir;
+    src: url("/font/vazir/Vazir-FD.eot");
+    src: url("/font/vazir/Vazir-FD.eot?#iefix") format("embedded-opentype"),
+        url("/font/vazir/Vazir-FD.woff2") format("woff2"),
+        url("/font/vazir/Vazir-FD.woff") format("woff"),
+        url("/font/vazir/Vazir-FD.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("/font/vazir/Vazir-Bold-FD.eot");
+    src: url("/font/vazir/Vazir-Bold-FD.eot?#iefix") format("embedded-opentype"),
+        url("/font/vazir/Vazir-Bold-FD.woff2") format("woff2"),
+        url("/font/vazir/Vazir-Bold-FD.woff") format("woff"),
+        url("/font/vazir/Vazir-Bold-FD.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("/font/vazir/Vazir-Black-FD.eot");
+    src: url("/font/vazir/Vazir-Black-FD.eot?#iefix")
+            format("embedded-opentype"),
+        url("/font/vazir/Vazir-Black-FD.woff2") format("woff2"),
+        url("/font/vazir/Vazir-Black-FD.woff") format("woff"),
+        url("/font/vazir/Vazir-Black-FD.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("/font/vazir/Vazir-Medium-FD.eot");
+    src: url("/font/vazir/Vazir-Medium-FD.eot?#iefix")
+            format("embedded-opentype"),
+        url("/font/vazir/Vazir-Medium-FD.woff2") format("woff2"),
+        url("/font/vazir/Vazir-Medium-FD.woff") format("woff"),
+        url("/font/vazir/Vazir-Medium-FD.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("/font/vazir/Vazir-Light-FD.eot");
+    src: url("/font/vazir/Vazir-Light-FD.eot?#iefix")
+            format("embedded-opentype"),
+        url("/font/vazir/Vazir-Light-FD.woff2") format("woff2"),
+        url("/font/vazir/Vazir-Light-FD.woff") format("woff"),
+        url("/font/vazir/Vazir-Light-FD.ttf") format("truetype");
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url("/font/vazir/Vazir-Thin-FD.eot");
+    src: url("/font/vazir/Vazir-Thin-FD.eot?#iefix") format("embedded-opentype"),
+        url("/font/vazir/Vazir-Thin-FD.woff2") format("woff2"),
+        url("/font/vazir/Vazir-Thin-FD.woff") format("woff"),
+        url("/font/vazir/Vazir-Thin-FD.ttf") format("truetype");
+    font-weight: 100;
+    font-style: normal;
+}
+
+:root {
+    --ifm-color-primary: #20c5ba;
+    --ifm-color-primary-dark: #1db1a7;
+    --ifm-color-primary-darker: #1ba79e;
+    --ifm-color-primary-darkest: #168a82;
+    --ifm-color-primary-light: #23d9cd;
+    --ifm-color-primary-lighter: #2bddd1;
+    --ifm-color-primary-lightest: #48e1d7;
+
+    --ifm-code-font-size: 95%;
+
+    --ifm-link-hover-decoration: none;
+}
+
+.docusaurus-highlight-code-line {
+    background-color: rgb(72, 77, 91);
+    display: block;
+    margin: 0 calc(-1 * var(--ifm-pre-padding));
+    padding: 0 var(--ifm-pre-padding);
+}
+
+.font {
+    font-family: Vazir, sans-serif;
+}
+
+/* Blog Section */
+
+article {
+    direction: rtl;
+    font-family: Vazir, sans-serif;
+}
+
+article footer.row {
+    flex-direction: column-reverse;
+}
+
+article footer.row .text--right {
+    display: none;
+}
+
+article footer.row .col strong {
+    display: none;
+}
+
+article .markdown p {
+    direction: rtl;
+    text-align: justify;
+    text-align-last: right;
+}
+
+article .markdown img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.avatar .avatar__photo + .avatar__intro {
+    margin-left: unset;
+    margin-right: var(--ifm-avatar-intro-margin);
+}
+
+/* Doc Section */
+
+.codeBlockContent_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+    direction: ltr;
+}
+
+.copyButton_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+    background-color: #36beb6 !important;
+    color: white !important;
+}
+
+article .markdown img[src*="#project"] {
+    width: 50%;
+    height: auto;
+    border-radius: 25px;
+    transform: translateX(-50%);
+}
+
+article .markdown img[src*="#small"] {
+    width: 25%;
+    height: auto;
+    border-radius: 0;
+    transform: translateX(-150%);
+}
+
+.hash-link {
+    margin-left: unset !important;
+    padding-right: unset !important;
+    margin-right: -1.25rem;
+    padding-left: 15rem;
+}
+
+/* Other */
+
+.footer .footer__items,
+.footer .footer__title {
+    text-align: center;
+}
+
+.footer .footer__links {
+    margin-bottom: 3rem;
+}

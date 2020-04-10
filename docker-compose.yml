@@ -1,25 +1,13 @@
-version: "3.7"
+version: "3"
 
 services:
-  site:
-    image: jekyll/jekyll:4.0.0
-    container_name: arash_site
+  app:
+    container_name: website_docusaurus
+    image: website_docusaurus
     restart: unless-stopped
-    command: jekyll serve --watch --force_polling --verbose --trace
-    volumes:
-      - .:/srv/jekyll:rw
-      - /docker/bundle:/usr/local/bundle
-    environment:
-      - JEKYLL_ENV=production
+    working_dir: /code
+    build:
+      context: .
+      dockerfile: ./docker/app/Dockerfile
     ports:
-        - 13003:4000
-    networks:
-      arash_network:
-        ipv4_address: "172.28.0.2"
-
-networks:
-  default:
-    external:
-      name: arash_network
-  arash_network:
-    external: true
+      - 13006:3000

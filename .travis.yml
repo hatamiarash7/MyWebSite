@@ -1,28 +1,17 @@
-sudo: false
+sudo: required
 
-dist: trusty
+cache:
+  yarn: true
+  directories:
+    - node_modules
 
-language: ruby
+language: node_js
 
-cache: bundler
-
-rvm:
-  - 2.5.3
-
-bundler_args: --without development
-
-env:
-  global:
-    - NOKOGIRI_USE_SYSTEM_LIBRARIES=true
-
-addons:
-  apt:
-    packages:
-      - libcurl4-openssl-dev
+node_js:
+  - 10
 
 jobs:
   include:
-    - stage: Test
+    - stage: Build
       script:
-        - JEKYLL_ENV=production
-        - bundle exec jekyll build
+        - yarn build
