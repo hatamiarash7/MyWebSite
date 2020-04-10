@@ -25,6 +25,11 @@ module.exports = {
                     label: "Projects",
                     position: "left",
                 },
+                {
+                    href: "https://github.com/hatamiarash7",
+                    label: "Github",
+                    position: "right",
+                },
             ],
         },
         footer: {
@@ -88,7 +93,6 @@ module.exports = {
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()}`,
         },
     },
     presets: [
