@@ -26,8 +26,9 @@ module.exports = {
                     position: "left",
                 },
                 {
-                    href: "https://github.com/hatamiarash7",
-                    label: "Github",
+                    to: "/contact",
+                    activeBasePath: "contact",
+                    label: "Contact",
                     position: "right",
                 },
             ],
