@@ -20,7 +20,7 @@ module.exports = {
                     position: "left",
                 },
                 {
-                    to: "docs/android-rtl-toast",
+                    to: "docs/description",
                     activeBasePath: "docs",
                     label: "Projects",
                     position: "left",
