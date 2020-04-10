@@ -153,6 +153,13 @@ article .markdown img[src*="#small"] {
     transform: translateX(-150%);
 }
 
+.hash-link {
+    margin-left: unset !important;
+    padding-right: unset !important;
+    margin-right: -1.25rem;
+    padding-left: 15rem;
+}
+
 /* Other */
 
 .footer .footer__items,
