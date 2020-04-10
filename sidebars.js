@@ -1,6 +1,10 @@
 module.exports = {
-  someSidebar: {
-    Docusaurus: ['doc1', 'doc2', 'doc3'],
-    Features: ['mdx'],
-  },
+    someSidebar: {
+        Projects: ["description"],
+        Android: ["android-rtl-toast"],
+        Laravel: ["laravel-jdf"],
+        Database: ["mongodb-admin"],
+        Network: ["dns-lookup", "mikrotik-dashboard"],
+        Simulation: ["flow-simulation", "wave-simulation"],
+    },
 };
