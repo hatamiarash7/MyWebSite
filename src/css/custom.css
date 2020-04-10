@@ -146,6 +146,13 @@ article .markdown img[src*="#project"] {
     transform: translateX(-50%);
 }
 
+article .markdown img[src*="#small"] {
+    width: 25%;
+    height: auto;
+    border-radius: 0;
+    transform: translateX(-150%);
+}
+
 /* Other */
 
 .footer .footer__items,
