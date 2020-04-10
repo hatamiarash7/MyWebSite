@@ -34,6 +34,8 @@ keywords:
 
 ## نسخه اندروید
 
+[![download apk](/img/badge-cafebazaar.png#small)](https://cafebazaar.ir/app/ir.hatamiarash.dnslookup)
+
 ![tooltip](/img/doc/4.jpg#project)
 
 ![tooltip](/img/doc/5.jpg#project)
@@ -41,6 +43,8 @@ keywords:
 ![tooltip](/img/doc/6.jpg#project)
 
 ## نسخه تحت وب
+
+[https://dns.arash-hatami.ir](https://dns.arash-hatami.ir)
 
 ![tooltip](/img/doc/7.jpg)
 
