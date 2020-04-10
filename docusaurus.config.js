@@ -102,7 +102,7 @@ module.exports = {
                 docs: {
                     sidebarPath: require.resolve("./sidebars.js"),
                     editUrl:
-                        "https://github.com/hatamiarash7/MyWebSite/tree/v2/docs/",
+                        "https://github.com/hatamiarash7/MyWebSite/tree/v2/",
                 },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
