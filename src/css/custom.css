@@ -145,3 +145,14 @@ article .markdown img[src*="#project"] {
     border-radius: 25px;
     transform: translateX(-50%);
 }
+
+/* Other */
+
+.footer .footer__items,
+.footer .footer__title {
+    text-align: center;
+}
+
+.footer .footer__links {
+    margin-bottom: 3rem;
+}
