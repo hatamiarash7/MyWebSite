@@ -20,7 +20,7 @@ module.exports = {
                     position: "left",
                 },
                 {
-                    to: "docs/doc1",
+                    to: "docs/android-rtl-toast",
                     activeBasePath: "docs",
                     label: "Projects",
                     position: "left",
@@ -98,7 +98,7 @@ module.exports = {
                 docs: {
                     sidebarPath: require.resolve("./sidebars.js"),
                     editUrl:
-                        "https://github.com/facebook/docusaurus/edit/master/website/",
+                        "https://github.com/hatamiarash7/MyWebSite/tree/v2/docs/",
                 },
                 theme: {
                     customCss: require.resolve("./src/css/custom.css"),
