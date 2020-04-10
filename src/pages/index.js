@@ -10,17 +10,36 @@ const features = [
     {
         title: <>Programming</>,
         imageUrl: "img/intro-1.svg",
-        description: <>a</>,
+        description: (
+            <>
+                If you have to spend effort looking at a fragment of code and
+                figuring out what it's doing, then you should extract it into a
+                function and name the function after the "what".
+            </>
+        ),
     },
     {
-        title: <>Focus on What Matters</>,
+        title: <>DevOps</>,
         imageUrl: "img/intro-2.svg",
-        description: <>b</>,
+        description: (
+            <>
+                The most powerful tool we have as developers is automation.
+                Currently, DevOps is more like a philosophical movement, not yet
+                a precise collection of practices, descriptive or prescriptive.
+            </>
+        ),
     },
     {
-        title: <>Powered by React</>,
+        title: <>Networks</>,
         imageUrl: "img/intro-3.svg",
-        description: <>c</>,
+        description: (
+            <>
+                Today, Web services is really about developing for the server.
+                What it means to developers is any set of systems services that
+                you make a Web service you to access by any kind of device with
+                a highly interactive client, not just a browser.
+            </>
+        ),
     },
 ];
 
