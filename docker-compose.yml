@@ -9,5 +9,17 @@ services:
     build:
       context: .
       dockerfile: ./docker/app/Dockerfile
+    expose:
+      - 3000
+
+  nginx:
+    container_name: website-nginx
+    image: website-nginx
+    build: ./docker/nginx
+    restart: unless-stopped
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
     ports:
-      - 13003:3000
+      - 13003:80
+    depends_on:
+      - app
