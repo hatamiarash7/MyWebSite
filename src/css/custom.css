@@ -75,7 +75,10 @@
     --ifm-color-primary-light: #23d9cd;
     --ifm-color-primary-lighter: #2bddd1;
     --ifm-color-primary-lightest: #48e1d7;
+
     --ifm-code-font-size: 95%;
+
+    --ifm-link-hover-decoration: none;
 }
 
 .docusaurus-highlight-code-line {
@@ -89,7 +92,7 @@
     font-family: Vazir, sans-serif;
 }
 
-/* Article Section */
+/* Blog Section */
 
 article {
     direction: rtl;
@@ -123,4 +126,22 @@ article .markdown img {
 .avatar .avatar__photo + .avatar__intro {
     margin-left: unset;
     margin-right: var(--ifm-avatar-intro-margin);
+}
+
+/* Doc Section */
+
+.codeBlockContent_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+    direction: ltr;
+}
+
+.copyButton_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
+    background-color: #36beb6 !important;
+    color: white !important;
+}
+
+article .markdown img[src*="#project"] {
+    width: 50%;
+    height: auto;
+    border-radius: 25px;
+    transform: translateX(-50%);
 }
