@@ -3,8 +3,12 @@ id: dns-lookup
 title: DNS Lookup
 sidebar_label: DNS Lookup
 keywords:
-    - docs
-    - docusaurus
+    - dns
+    - dnslookup
+    - dns-lookup
+    - dns lookup
+    - network
+    - dns records
 ---
 
 رکوردهای دی ان اس (DNS) یکی از بخش‌های مهم زیرساخت اینترنت را تشکیل می‌دهند. مدیران سایت‌ها اغلب برای رفع نیازهای مختلف خود از رکوردهای DNS استفاده می‌کنند. خوشبختانه این رکوردها بدون نیاز به داشتن اطلاعات به‌راحتی قابل مدیریت هستند.

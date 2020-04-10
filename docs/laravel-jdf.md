@@ -3,8 +3,11 @@ id: laravel-jdf
 title: Laravel JDF
 sidebar_label: Persian Date / Time
 keywords:
-    - docs
-    - docusaurus
+    - laravel
+    - jdf
+    - laravel date
+    - persian date
+    - laravel persian date
 ---
 
 با استفاده از این کتابخانه به راحتی می توانید از تاریخ فارسی در پروژه لاراول خود استفاده کنید

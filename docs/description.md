@@ -2,9 +2,6 @@
 id: description
 title: Projects
 sidebar_label: Description
-keywords:
-    - docs
-    - docusaurus
 ---
 
 با استفاده از لیست سمت چپ می توانید به تمامی پروژه ها دسترسی داشته باشید. دسته بندی های کلی انجام شده و می توانید بر آن اساس پروژه های مختلف را مشاهده کنید ( اندروید ، وب و ... )

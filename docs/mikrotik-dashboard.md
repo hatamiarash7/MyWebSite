@@ -3,8 +3,11 @@ id: mikrotik-dashboard
 title: Mikrotik Dashboard
 sidebar_label: Mikrotik Dashboard
 keywords:
-    - docs
-    - docusaurus
+    - mikrotik
+    - network
+    - dashboard
+    - mikrotik dashboard
+    - mikrotik api
 ---
 
 روتر میکروتیک شما را قادر می‎سازد تا در کم ترین زمان ممکن بتوانید کلیه سرویس های شبکه را پیاده سازی کنید. سیستم عامل این دستگاه Router OS می‎باشد که به سادگی بر روی روتر نصب شده و قابل تنظیم است و همچنین برای اکثر سناریوهای شبکه قابلیت انعطاف زیادی دارد. کمپانی میکروتیک در حال حاضر یکی از برترین کمپانی های است که در زمینه ارائه خدمات شبکه فعالیت می‎کند و مشتریان این شرکت کمپانی های چون HP – Motorola – Siemens – Nasa و ... میباشد.

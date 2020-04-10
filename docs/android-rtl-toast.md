@@ -2,6 +2,14 @@
 id: android-rtl-toast
 title: RTL Toast
 sidebar_label: RTL Toast
+keywords:
+    - android
+    - toast
+    - android toast
+    - rtl
+    - rtl toast
+    - android rtl
+    - android rtl toast
 ---
 
 با استفاده از این کتابخانه می توانید از Toast هایی شخصی سازی شده با قالب های پیشفرض در برنامه خود استفاده کنید.

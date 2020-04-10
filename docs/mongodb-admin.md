@@ -3,8 +3,11 @@ id: mongodb-admin
 title: MongoDB Admin
 sidebar_label: MongoDB Admin
 keywords:
-    - docs
-    - docusaurus
+    - database
+    - mongo
+    - mongodb
+    - mongodb admin
+    - mongodb dashboard
 ---
 
 رابط کاربری ساده ، ریسپانسیو و کراس پلتفرم برای دیتابیس Mongo

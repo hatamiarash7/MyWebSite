@@ -3,8 +3,9 @@ id: flow-simulation
 title: Flow Simulation
 sidebar_label: Flow
 keywords:
-    - docs
-    - docusaurus
+    - simulation
+    - flow
+    - flow simulation
 ---
 
 شبیه سازی ذرات معلق در هوا با جاوا اسکریپت

@@ -3,8 +3,9 @@ id: wave-simulation
 title: Wave Simulation
 sidebar_label: Wave
 keywords:
-    - docs
-    - docusaurus
+    - simulation
+    - wave
+    - wave simulation
 ---
 
 شبیه سازی سه بعدی امواج آب با جاوا اسکریپت
