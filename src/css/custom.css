@@ -128,6 +128,15 @@ article .markdown img {
     margin-right: var(--ifm-avatar-intro-margin);
 }
 
+.admonition-heading h5:not(span) {
+    color: transparent;
+}
+
+blockquote p {
+    text-align: left !important;
+    text-align-last: left !important;
+}
+
 /* Doc Section */
 
 .codeBlockContent_node_modules-\@docusaurus-theme-classic-src-theme-CodeBlock- {
