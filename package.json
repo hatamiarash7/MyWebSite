@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "start": "docusaurus start",
-        "docker": "export NODE_ENV=production && docusaurus start --host 0.0.0.0",
+        "docker": "docusaurus start --host 0.0.0.0",
         "build": "docusaurus build",
         "swizzle": "docusaurus swizzle",
         "deploy": "docusaurus deploy"
