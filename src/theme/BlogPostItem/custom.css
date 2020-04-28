@@ -1,0 +1,68 @@
+@import "../../css/font.css";
+
+.rtl {
+    direction: rtl;
+}
+
+.avatar {
+    direction: rtl;
+    font-family: Vazir, sans-serif;
+}
+
+.avatar .avatar__photo + .avatar__intro {
+    margin-left: unset;
+    margin-right: var(--ifm-avatar-intro-margin);
+}
+
+.blogPostDate {
+    direction: rtl;
+}
+
+.hidden {
+    display: none;
+}
+
+.markdown {
+    direction: rtl;
+}
+
+.markdown p {
+    direction: rtl;
+    text-align: justify;
+    text-align-last: right;
+    font-family: Vazir, sans-serif;
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown h4,
+.markdown h5 {
+    direction: rtl;
+    font-family: Vazir, sans-serif;
+}
+
+.markdown img {
+    width: 100%;
+    height: auto;
+    border-radius: 25px;
+}
+
+.markdown img[src*="#project"] {
+    width: 50%;
+    height: auto;
+    border-radius: 25px;
+    transform: translateX(-50%);
+}
+
+.markdown img[src*="#small"] {
+    width: 25%;
+    height: auto;
+    border-radius: 0;
+    transform: translateX(-150%);
+}
+
+.tags {
+    direction: rtl;
+    flex-direction: column-reverse;
+}

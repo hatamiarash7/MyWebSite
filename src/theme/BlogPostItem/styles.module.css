@@ -6,9 +6,12 @@
  */
 
 .blogPostTitle {
-  font-size: 3rem;
+    font-size: 3rem;
+    direction: rtl;
+    font-family: Vazir, sans-serif;
 }
 
 .blogPostDate {
-  font-size: 0.9rem;
+    font-size: 0.9rem;
+    direction: rtl !important;
 }
