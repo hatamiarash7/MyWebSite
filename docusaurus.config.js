@@ -96,6 +96,7 @@ module.exports = {
             ],
         },
     },
+    themes: ["@docusaurus/theme-classic"],
     presets: [
         [
             "@docusaurus/preset-classic",
