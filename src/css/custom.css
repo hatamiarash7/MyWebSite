@@ -22,3 +22,12 @@
 .contents__link {
     font-family: Vazir, sans-serif;
 }
+
+.admonition-heading h5:not(span) {
+    color: transparent;
+}
+
+blockquote p {
+    text-align: left !important;
+    text-align-last: left !important;
+}
