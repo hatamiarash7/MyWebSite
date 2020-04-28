@@ -18,3 +18,7 @@
     margin: 0 calc(-1 * var(--ifm-pre-padding));
     padding: 0 var(--ifm-pre-padding);
 }
+
+.contents__link {
+    font-family: Vazir, sans-serif;
+}

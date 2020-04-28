@@ -22,6 +22,7 @@
 
 .codeBlock {
     overflow: auto;
+    border-radius: 10px;
 }
 
 .codeBlockWithTitle {
