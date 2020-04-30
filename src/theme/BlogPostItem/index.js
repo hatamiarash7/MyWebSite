@@ -11,7 +11,6 @@ import { MDXProvider } from "@mdx-js/react";
 
 import Link from "@docusaurus/Link";
 import MDXComponents from "@theme/MDXComponents";
-import scrollpup from "scrollpup";
 
 import "./custom.css";
 import styles from "./styles.module.css";
@@ -32,11 +31,6 @@ const MONTHS = [
 ];
 
 function BlogPostItem(props) {
-    scrollpup({
-        background: "linear-gradient(to right, #ff416c, #ff4b2b)",
-        height: "62px",
-    });
-
     const {
         children,
         frontMatter,
