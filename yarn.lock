@@ -7852,6 +7852,11 @@ schema-utils@^2.0.0, schema-utils@^2.6.4, schema-utils@^2.6.5:
     ajv "^6.12.0"
     ajv-keywords "^3.4.1"
 
+scrollpup@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/scrollpup/-/scrollpup-0.0.1.tgz#b2e586633505cb280a2e54b7302bc92f89c4fe20"
+  integrity sha512-bicvZVRrD7fQ9ggBdrF2ewvzHE5k516PcWGs0GQzjPdEaK1VjKZ3V75dtS71OfXXuTY1NZzxUn24M//ApFO19g==
+
 section-matter@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/section-matter/-/section-matter-1.0.0.tgz#e9041953506780ec01d59f292a19c7b850b84167"
