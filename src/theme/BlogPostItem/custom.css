@@ -62,6 +62,10 @@
     transform: translateX(-150%);
 }
 
+.markdown img[src*="#notround"] {
+    border-radius: 0;
+}
+
 .tags {
     direction: rtl;
     flex-direction: column-reverse;
