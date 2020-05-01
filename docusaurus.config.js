@@ -111,7 +111,7 @@ module.exports = {
                 },
                 blog: {
                     feedOptions: {
-                        type: "rss",
+                        type: "all",
                         copyright: `Copyright © ${new Date().getFullYear()} Arash Hatami.`,
                         language: "fa",
                     },
