@@ -26,7 +26,12 @@ function Contact() {
                         paddingBottom: "5vh",
                     }}
                 >
-                    <form name="contact" method="POST" data-netlify="true">
+                    <form
+                        name="contact"
+                        method="POST"
+                        data-netlify-recaptcha="true"
+                        data-netlify="true"
+                    >
                         <div className="large-group">
                             <div className="small-group">
                                 <label for="name">Name</label>
