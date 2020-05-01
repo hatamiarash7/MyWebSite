@@ -1,34 +1,10 @@
 import React from "react";
 import classnames from "classnames";
 import Layout from "@theme/Layout";
-import Link from "@docusaurus/Link";
-import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
+import "./contact.scss";
 
-function Feature({ imageUrl, title, description }) {
-    const imgUrl = useBaseUrl(imageUrl);
-    return (
-        <div className={classnames("col col--4", styles.feature)}>
-            {imgUrl && (
-                <div className="text--center">
-                    <img
-                        className={styles.featureImage}
-                        src={imgUrl}
-                        alt={title}
-                    />
-                </div>
-            )}
-            <h3 className="text--center">{title}</h3>
-            <p>{description}</p>
-        </div>
-    );
-}
-
-function Home() {
-    const context = useDocusaurusContext();
-    const { siteConfig = {} } = context;
-
+function Contact() {
     return (
         <Layout description="DevOps - SRE / Network Eng">
             <header
@@ -45,25 +21,43 @@ function Home() {
                         flexDirection: "column",
                         justifyContent: "center",
                         alignItems: "center",
-                        height: "90vh",
                         fontSize: "20px",
+                        paddingTop: "5vh",
+                        paddingBottom: "5vh",
                     }}
                 >
-                    <p>
-                        <strong>Email : </strong> info@arash-hatami.ir
-                    </p>
+                    <form name="contact" method="POST" data-netlify="true">
+                        <div className="large-group">
+                            <div className="small-group">
+                                <label for="name">Name</label>
+                                <input id="name" type="text" name="name" />
+                            </div>
 
-                    <p>
-                        <strong>Phone : </strong> +98 918 218 0519
-                    </p>
+                            <div className="small-group">
+                                <label for="email">Email</label>
+                                <input id="email" type="email" name="email" />
+                            </div>
 
-                    <h2
-                        style={{
-                            marginTop: "50px",
-                        }}
-                    >
-                        StackOverflow
-                    </h2>
+                            <div className="textarea-div">
+                                <label for="message">Message</label>
+                                <textarea
+                                    id="message"
+                                    type="text"
+                                    name="message"
+                                ></textarea>
+                            </div>
+
+                            <input
+                                id="submit"
+                                className="btn"
+                                type="submit"
+                                name="submit"
+                                value="Submit"
+                            />
+                        </div>
+                    </form>
+
+                    <h2 style={{ marginTop: "50px" }}>StackOverflow</h2>
 
                     <a
                         href="https://stackoverflow.com/users/4905220/arash-hatami"
@@ -78,13 +72,7 @@ function Home() {
                         ></img>
                     </a>
 
-                    <h2
-                        style={{
-                            marginTop: "50px",
-                        }}
-                    >
-                        LinkedIn
-                    </h2>
+                    <h2 style={{ marginTop: "50px" }}>LinkedIn</h2>
 
                     <a
                         href="https://www.linkedin.com/in/hatamiarash7"
@@ -99,13 +87,7 @@ function Home() {
                         ></img>
                     </a>
 
-                    <h2
-                        style={{
-                            marginTop: "50px",
-                        }}
-                    >
-                        Github
-                    </h2>
+                    <h2 style={{ marginTop: "50px" }}>Github</h2>
 
                     <a href="https://github.com/hatamiarash7" target="_blank">
                         <img
@@ -122,4 +104,4 @@ function Home() {
     );
 }
 
-export default Home;
+export default Contact;
