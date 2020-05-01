@@ -29,8 +29,7 @@ function Contact() {
                     <form
                         name="contact"
                         method="POST"
-                        data-netlify-recaptcha="true"
-                        data-netlify="true"
+                        action="https://formsubmit.co/hatamiarash7@gmail.com"
                     >
                         <div className="large-group">
                             <div className="small-group">
