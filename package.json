@@ -14,8 +14,8 @@
         "@docusaurus/preset-classic": "2.0.0-alpha.54",
         "classnames": "^2.2.6",
         "docusaurus-plugin-sass": "^0.1.8",
-        "react": "^16.13.1",
-        "react-dom": "^16.13.1"
+        "react": "^16.8.4",
+        "react-dom": "^16.8.4"
     },
     "browserslist": {
         "production": [
