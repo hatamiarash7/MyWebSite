@@ -135,4 +135,5 @@ module.exports = {
             async: true,
         },
     ],
+    plugins: ["docusaurus-plugin-sass"],
 };
