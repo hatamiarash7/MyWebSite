@@ -31,19 +31,26 @@ function Contact() {
                         method="POST"
                         action="https://formsubmit.co/hatamiarash7@gmail.com"
                     >
+                        <input
+                            type="text"
+                            name="_honey"
+                            style={{ display: "none" }}
+                        />
+                        <input type="hidden" name="_template" value="table" />
+
                         <div className="large-group">
                             <div className="small-group">
-                                <label for="name">Name</label>
+                                <label htmlFor="name">Name</label>
                                 <input id="name" type="text" name="name" />
                             </div>
 
                             <div className="small-group">
-                                <label for="email">Email</label>
+                                <label htmlFor="email">Email</label>
                                 <input id="email" type="email" name="email" />
                             </div>
 
                             <div className="textarea-div">
-                                <label for="message">Message</label>
+                                <label htmlFor="message">Message</label>
                                 <textarea
                                     id="message"
                                     type="text"
