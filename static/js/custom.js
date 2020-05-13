@@ -61,7 +61,7 @@ var _paq = window._paq || [];
 _paq.push(["trackPageView"]);
 _paq.push(["enableLinkTracking"]);
 (function () {
-    var u = "https://matomo.arash-hatami.ir/matomo/";
+    var u = "https://matomo.arash-hatami.ir/";
     _paq.push(["setTrackerUrl", u + "matomo.php"]);
     _paq.push(["setSiteId", "1"]);
     var d = document,
