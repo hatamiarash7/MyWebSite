@@ -51,6 +51,10 @@ module.exports = {
                             label: "DNS Lookup",
                             href: "https://dns.arash-hatami.ir",
                         },
+                        {
+                            label: "Mikrotik Hotspot Generator",
+                            href: "https://mikrotik-generator.arash-hatami.ir/",
+                        },
                     ],
                 },
                 {
