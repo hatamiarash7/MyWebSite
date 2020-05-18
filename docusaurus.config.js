@@ -1,6 +1,6 @@
 module.exports = {
     title: "Arash Hatami",
-    tagline: "Progranner .:|:. DevOps .:|:. Network Eng",
+    tagline: "Programmer .:|:. DevOps .:|:. Network Eng",
     url: "https://arash-hatami.ir",
     baseUrl: "/",
     favicon: "img/favicon.ico",
