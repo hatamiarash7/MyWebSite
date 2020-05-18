@@ -180,4 +180,19 @@ git commit -S ==> git cis
 git cis -m "your commit message"
 ```
 
+:::danger
+در سیستم عامل ویندوز اگر حین اجرای commit ها با خطای زیر مواجه شدید :
+
+```
+gpg: skipped "85F76C4F90C1E8F9": No secret key
+gpg: signing failed: No secret key
+error: gpg failed to sign the data
+fatal: failed to write commit object
+```
+
+برای رفع مشکل دستور زیر را اجرا کنید :
+
+`git config --global gpg.program "C:\Program Files (x86)\GnuPG\bin\gpg.exe`
+:::
+
 اگر سوال یا مشکلی داشتید ، در تماس باشید
