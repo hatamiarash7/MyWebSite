@@ -15,7 +15,8 @@
         "classnames": "^2.2.6",
         "docusaurus-plugin-sass": "^0.1.8",
         "react": "^16.8.4",
-        "react-dom": "^16.8.4"
+        "react-dom": "^16.8.4",
+        "react-helmet": "^6.0.0"
     },
     "browserslist": {
         "production": [
