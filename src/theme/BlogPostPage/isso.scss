@@ -1,0 +1,118 @@
+html[data-theme="dark"] {
+    --iso-btn-color: var(--ifm-color-gray-300);
+}
+
+html[data-theme=""] {
+    --iso-btn-color: var(--ifm-color-gray-700);
+}
+
+#isso-thread {
+    font-family: Vazir, sans-serif;
+
+    h4 {
+        color: var(--ifm-color-primary) !important;
+        text-align: right;
+        direction: rtl;
+    }
+
+    .isso-postbox {
+        .textarea {
+            direction: rtl;
+            color: black;
+        }
+
+        section.auth-section {
+            .input-wrapper {
+                margin-right: 5px;
+
+                input {
+                    font-family: Vazir, sans-serif;
+                    text-align: center;
+                    font-size: 12px;
+                }
+            }
+
+            .post-action {
+                input {
+                    background-color: transparent;
+                    border-color: var(--iso-btn-color);
+                    border-radius: var(--ifm-pagination-nav-border-radius);
+                    border-style: solid;
+                    border-width: 1px;
+                    padding: 5px 10px 5px 10px;
+                    color: var(--iso-btn-color);
+                    transition: 0.1s linear all;
+                    font-size: 12px;
+                    margin-bottom: 0;
+
+                    &:hover {
+                        color: var(--ifm-color-primary);
+                        border-color: var(--ifm-color-primary);
+                    }
+
+                    &[name="preview"] {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .preview .text {
+            color: black;
+            direction: rtl;
+        }
+    }
+
+    #isso-root {
+        direction: rtl;
+
+        .isso-comment-header {
+            .author,
+            .permalink {
+                font-size: 12px;
+            }
+
+            .note {
+                margin-left: 5px;
+
+                &::after {
+                    content: " •";
+                }
+            }
+        }
+
+        .isso-comment {
+            .isso-follow-up {
+                padding-left: unset;
+                padding-right: calc(7% + 20px);
+            }
+
+            & > div.avatar {
+                float: right;
+                margin: 3px 0 0 15px;
+
+                img {
+                    border-radius: 15px;
+                }
+            }
+
+            & > div.text-wrapper > .isso-comment-footer > a {
+                padding-left: 0;
+                transition: 0.1s linear all;
+
+                &:hover {
+                    color: var(--ifm-color-primary-darkest) !important;
+                    text-shadow: none !important;
+                }
+
+                &:first-child {
+                    padding-left: 1em;
+                }
+            }
+        }
+
+        p {
+            font-size: 14px;
+        }
+    }
+}
