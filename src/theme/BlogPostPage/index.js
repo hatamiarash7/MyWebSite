@@ -50,6 +50,7 @@ function BlogPostPage(props) {
                                     src="http://domain.test:8085/js/embed.min.js"
                                 ></script>
                             </Helmet>
+                            <hr />
                             <section id="isso-thread"></section>
                         </div>
                     </div>
