@@ -38,7 +38,7 @@ function BlogPostPage(props) {
                             )}
                             <Helmet>
                                 <script
-                                    data-isso="http://domain.test:8085/"
+                                    data-isso="http://isso.arash-hatami.ir/"
                                     data-isso-lang="fa"
                                     data-isso-require-author="true"
                                     data-isso-require-email="true"
@@ -47,7 +47,7 @@ function BlogPostPage(props) {
                                     data-isso-gravatar="true"
                                     data-isso-vote="false"
                                     data-isso-feed="false"
-                                    src="http://domain.test:8085/js/embed.min.js"
+                                    src="http://isso.arash-hatami.ir/js/embed.min.js"
                                 ></script>
                             </Helmet>
                             <hr />
