@@ -1,0 +1,6 @@
+[submodule "content/themes/casper"]
+	path = content/themes/casper
+	url = https://github.com/hatamiarash7/MyWebSite_Theme
+[submodule "core/client"]
+	path = core/client
+	url = https://github.com/TryGhost/Ghost-Admin
