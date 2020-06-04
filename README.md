@@ -5,4 +5,3 @@
 https://arash-hatami.ir
 
 -   React v16
--   Docusaurus v2
