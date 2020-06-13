@@ -4,7 +4,7 @@ services:
   ghost:
     build: .
     image: hatamiarash7/website-v3
-    container_name: website-v3
+    container_name: ghost
     restart: always
     environment:
       NODE_ENV: production
@@ -20,7 +20,22 @@ services:
       logging__rotation__enabled: "true"
       logging__rotation__count: 15
       logging__rotation__period: "1d"
-    ports:
-      - 2369:2369
     volumes:
       - ./content:/home/arash/.build/release/content
+    networks:
+      - website
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      - "traefik.http.routers.ghost.rule=Host(`arash-hatami.ir`)"
+      - "traefik.http.routers.ghost.entrypoints=web"
+      - "traefik.http.routers.ghost.service=ghost"
+      - "traefik.http.services.ghost.loadbalancer.server.port=2369"
+
+networks:
+  website:
+    external: false
+    driver: bridge
+  traefik:
+    external: true
