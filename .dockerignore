@@ -8,6 +8,7 @@ node_modules
 LICENSE
 README.md
 .build
+.dist
 .circleci
 .gitlab-ci.yml
 .travis.yml
