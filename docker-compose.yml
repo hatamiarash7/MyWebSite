@@ -22,3 +22,5 @@ services:
       logging__rotation__period: "1d"
     ports:
       - 2369:2369
+    volumes:
+      - ./content:/home/arash/.build/release/content
