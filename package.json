@@ -22,6 +22,7 @@
     "main": "./core/index",
     "scripts": {
         "start": "node index",
+        "start-docker": "NODE_ENV=production node index",
         "dev": "DEBUG=ghost:* grunt dev",
         "test": "grunt validate",
         "ci": "grunt validate --verbose",

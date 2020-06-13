@@ -1,0 +1,12 @@
+version: '3.1'
+
+services:
+  ghost:
+    build: .
+    image: hatamiarash7/website-v3
+    container_name: website-v3
+    restart: always
+    environment:
+      NODE_ENV: production
+    ports:
+      - 2368:2368
