@@ -7,8 +7,8 @@ node_modules
 .gitattributes
 LICENSE
 README.md
-build
-docker
+.build
+.dist
 .circleci
 .gitlab-ci.yml
 .travis.yml

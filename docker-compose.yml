@@ -1,25 +1,26 @@
-version: "3"
+version: '3.1'
 
 services:
-  app:
-    container_name: website-docusaurus
-    image: website-docusaurus
-    restart: unless-stopped
-    working_dir: /code
-    build:
-      context: .
-      dockerfile: ./docker/app/Dockerfile
-    expose:
-      - 3000
-
-  nginx:
-    container_name: website-nginx
-    image: website-nginx
-    build: ./docker/nginx
-    restart: unless-stopped
-    volumes:
-      - ./docker/nginx/nginx.conf:/etc/nginx/conf.d/nginx.conf
+  ghost:
+    build: .
+    image: hatamiarash7/website-v3
+    container_name: website-v3
+    restart: always
+    environment:
+      NODE_ENV: production
+      url: "http://localhost:2369"
+      server__host: "0.0.0.0"
+      server__port: 2369
+      database__client: "sqlite3"
+      database__connection__filename: "content/data/arash.db"
+      database__useNullAsDefault: "true"
+      database__debug: "false"
+      paths__contentPath: "content/"
+      logging__level: "info"
+      logging__rotation__enabled: "true"
+      logging__rotation__count: 15
+      logging__rotation__period: "1d"
     ports:
-      - 13003:80
-    depends_on:
-      - app
+      - 2369:2369
+    volumes:
+      - ./content:/home/arash/.build/release/content
