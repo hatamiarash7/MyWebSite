@@ -34,9 +34,9 @@ services:
       - "traefik.http.routers.ghost.entrypoints=web"
       - "traefik.http.routers.ghost.service=ghost"
       # HTTPS
-      - "traefik.http.routers.ghost-https.rule=Host(`arash-hatami.ir`)"
-      - "traefik.http.routers.ghost-https.entrypoints=websecure"
-      - "traefik.http.routers.ghost-https.service=ghost"
+#      - "traefik.http.routers.ghost-https.rule=Host(`arash-hatami.ir`)"
+#      - "traefik.http.routers.ghost-https.entrypoints=websecure"
+#      - "traefik.http.routers.ghost-https.service=ghost"
 
 networks:
   website:
