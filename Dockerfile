@@ -12,12 +12,8 @@ COPY . .
 
 RUN yarn setup
 
-RUN grunt build
-
 RUN grunt prod
 
 WORKDIR /home/app/.build/release
-
-RUN ls -a
 
 CMD ["yarn", "start-docker"]
