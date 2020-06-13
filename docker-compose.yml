@@ -8,5 +8,17 @@ services:
     restart: always
     environment:
       NODE_ENV: production
+      url: "http://localhost:2369"
+      server__host: "0.0.0.0"
+      server__port: 2369
+      database__client: "sqlite3"
+      database__connection__filename: "content/data/arash.db"
+      database__useNullAsDefault: "true"
+      database__debug: "false"
+      paths__contentPath: "content/"
+      logging__level: "info"
+      logging__rotation__enabled: "true"
+      logging__rotation__count: 15
+      logging__rotation__period: "1d"
     ports:
       - 2369:2369
