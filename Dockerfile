@@ -1,19 +1,23 @@
 FROM node:10.20.0-alpine
 
-RUN apk add --no-cache git
+RUN apk add git
 
-RUN mkdir /home/app
+RUN mkdir /home/arash
 
 RUN yarn global add knex-migrator grunt grunt-cli ember-cli
 
-WORKDIR /home/app
+COPY . /home/arash
 
-COPY . .
+WORKDIR /home/arash
 
 RUN yarn setup
 
+RUN grunt build
+
 RUN grunt prod
 
-WORKDIR /home/app/.build/release
+RUN grunt release
+
+WORKDIR /home/arash/.build/release
 
 CMD ["yarn", "start-docker"]
