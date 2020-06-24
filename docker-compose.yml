@@ -34,6 +34,8 @@ services:
       - "traefik.http.routers.ghost.entrypoints=websecure"
       - "traefik.http.routers.ghost.service=ghost"
       - "traefik.http.services.ghost.loadbalancer.server.port=2369"
+      - "traefik.http.middlewares.myHeader.headers.customresponseheaders.AH-Author=ArashHatami"
+      - "traefik.http.middlewares.myHeader.headers.customresponseheaders.AH-Version=3"
       # Redirect
       - "traefik.http.routers.ghost-http.rule=Host(`arash-hatami.ir`)"
       - "traefik.http.routers.ghost-http.entrypoints=web"
