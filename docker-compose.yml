@@ -22,6 +22,7 @@ services:
       logging__rotation__period: "1d"
     volumes:
       - ./content:/home/arash/.build/release/content
+      - ./core/frontend:/home/arash/.build/release/core/frontend
     networks:
       - website
       - traefik
