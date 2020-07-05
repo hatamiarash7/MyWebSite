@@ -102,11 +102,12 @@
         }
     },
     "imageOptimization": {
-        "resize": true
+        "resize": true,
+        "srcsets": true
     },
     "compress": true,
     "preloadHeaders": false,
     "adminFrameProtection": true,
     "sendWelcomeEmail": true,
-    "stripeDirect": true
+    "stripeDirect": false
 }

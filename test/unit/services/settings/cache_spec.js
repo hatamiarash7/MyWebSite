@@ -1,6 +1,8 @@
 const rewire = require('rewire');
 const should = require('should');
+const sinon = require('sinon');
 const _ = require('lodash');
+const {events} = require('../../../../core/server/lib/common');
 const publicSettings = require('../../../../core/server/services/settings/public');
 let cache = rewire('../../../../core/server/services/settings/cache');
 
@@ -9,6 +11,10 @@ should.equal(true, true);
 describe('UNIT: settings cache', function () {
     beforeEach(function () {
         cache = rewire('../../../../core/server/services/settings/cache');
+    });
+
+    afterEach(function () {
+        sinon.restore();
     });
 
     it('does not auto convert string into number', function () {
@@ -39,12 +45,12 @@ describe('UNIT: settings cache', function () {
     it('correctly filters and formats public values', function () {
         cache.set('key1', {value: 'something'});
         cache.set('title', {value: 'hello world'});
-        cache.set('active_timezone', {value: 'PST'});
+        cache.set('timezone', {value: 'PST'});
 
         cache.getAll().should.eql({
             key1: {value: 'something'},
             title: {value: 'hello world'},
-            active_timezone: {value: 'PST'}
+            timezone: {value: 'PST'}
         });
 
         let values = _.zipObject(_.values(publicSettings), _.fill(Array(_.size(publicSettings)), null));
@@ -52,5 +58,42 @@ describe('UNIT: settings cache', function () {
         values.timezone = 'PST';
 
         cache.getPublic().should.eql(values);
+    });
+
+    it('can shutdown and init without double handling of events', function () {
+        const setSpy = sinon.spy(cache, 'set');
+
+        const settingsCollection = {
+            models: [{
+                get: () => 'key1',
+                toJSON: () => ({value: 'init value'})
+            }]
+        };
+
+        cache.init(settingsCollection);
+        cache.get('key1').should.equal('init value');
+
+        // check handler only called once on settings.edit
+        setSpy.callCount.should.equal(1);
+        events.emit('settings.edited', {
+            get: () => 'key1',
+            toJSON: () => ({value: 'first edit'})
+        });
+        setSpy.callCount.should.equal(2);
+        cache.get('key1').should.equal('first edit');
+
+        // shutdown + init
+        cache.shutdown();
+        cache.init(settingsCollection);
+        setSpy.callCount.should.equal(3);
+        cache.get('key1').should.equal('init value');
+
+        // edit again, check event only fired once
+        events.emit('settings.edited', {
+            get: () => 'key1',
+            toJSON: () => ({value: 'second edit'})
+        });
+        setSpy.callCount.should.equal(4);
+        cache.get('key1').should.equal('second edit');
     });
 });

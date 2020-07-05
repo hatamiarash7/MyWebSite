@@ -1,11 +1,13 @@
-const _ = require('lodash');
 const {i18n} = require('../../../../../lib/common');
 const errors = require('@tryghost/errors');
 const debug = require('ghost-ignition').debug('api:canary:utils:serializers:output:members');
 const mapper = require('./utils/mapper');
-const {formatCSV} = require('../../../../../lib/fs');
+const {unparse} = require('@tryghost/members-csv');
 
 module.exports = {
+    hasActiveStripeSubscriptions(data, apiConfig, frame) {
+        frame.response = data;
+    },
     browse(data, apiConfig, frame) {
         debug('browse');
 
@@ -45,49 +47,14 @@ module.exports = {
         };
     },
 
-    exportCSV(models, apiConfig, frame) {
+    exportCSV(data, apiConfig, frame) {
         debug('exportCSV');
 
-        const fields = [
-            'id',
-            'email',
-            'name',
-            'note',
-            'subscribed_to_emails',
-            'complimentary_plan',
-            'stripe_customer_id',
-            'created_at',
-            'deleted_at',
-            'labels'
-        ];
-
-        const members = models.members.map((member) => {
-            member = mapper.mapMember(member, frame);
-            let stripeCustomerId;
-
-            if (member.stripe) {
-                stripeCustomerId = _.get(member, 'stripe.subscriptions[0].customer.id');
-            }
-            let labels = [];
-            if (member.labels) {
-                labels = `"${member.labels.map(l => l.name).join(',')}"`;
-            }
-
-            return {
-                id: member.id,
-                email: member.email,
-                name: member.name,
-                note: member.note,
-                subscribed_to_emails: member.subscribed,
-                complimentary_plan: member.comped,
-                stripe_customer_id: stripeCustomerId,
-                created_at: JSON.stringify(member.created_at),
-                deleted_at: JSON.stringify(member.deleted_at),
-                labels: labels
-            };
+        const members = data.members.map((member) => {
+            return mapper.mapMember(member, frame);
         });
 
-        frame.response = formatCSV(members, fields);
+        frame.response = unparse(members);
     },
 
     importCSV(data, apiConfig, frame) {
