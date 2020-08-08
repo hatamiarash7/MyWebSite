@@ -1,10 +1,12 @@
-const {i18n} = require('../../lib/common');
 const errors = require('@tryghost/errors');
 const {extract, hasProvider} = require('oembed-parser');
 const Promise = require('bluebird');
-const externalRequest = require('../../lib/request-external');
 const cheerio = require('cheerio');
 const _ = require('lodash');
+const {CookieJar} = require('tough-cookie');
+const config = require('../../../shared/config');
+const {i18n} = require('../../lib/common');
+const externalRequest = require('../../lib/request-external');
 
 async function fetchBookmarkData(url, html) {
     const metascraper = require('metascraper')([
@@ -22,7 +24,8 @@ async function fetchBookmarkData(url, html) {
 
     try {
         if (!html) {
-            const response = await externalRequest(url);
+            const cookieJar = new CookieJar();
+            const response = await externalRequest(url, {cookieJar});
             html = response.body;
         }
         scraperResponse = await metascraper({html, url});
@@ -38,14 +41,18 @@ async function fetchBookmarkData(url, html) {
     delete metadata.image;
     delete metadata.logo;
 
-    if (metadata.title && metadata.description) {
+    if (metadata.title) {
         return Promise.resolve({
             type: 'bookmark',
             url,
             metadata
         });
     }
-    return Promise.resolve();
+
+    return Promise.reject(new errors.ValidationError({
+        message: i18n.t('errors.api.oembed.insufficientMetadata'),
+        context: url
+    }));
 }
 
 const findUrlWithProvider = (url) => {
@@ -93,7 +100,13 @@ function isIpOrLocalhost(url) {
         const IPV6_REGEX = /:/; // fqdns will not have colons
         const HTTP_REGEX = /^https?:/i;
 
-        const {protocol, hostname} = new URL(url);
+        const siteUrl = new URL(config.get('url'));
+        const {protocol, hostname, host} = new URL(url);
+
+        // allow requests to Ghost's own url through
+        if (siteUrl.host === host) {
+            return false;
+        }
 
         if (!HTTP_REGEX.test(protocol) || hostname === 'localhost' || IPV4_REGEX.test(hostname) || IPV6_REGEX.test(hostname)) {
             return true;
@@ -121,14 +134,16 @@ function fetchOembedData(_url) {
 
     // url not in oembed list so fetch it in case it's a redirect or has a
     // <link rel="alternate" type="application/json+oembed"> element
+    const cookieJar = new CookieJar();
     return externalRequest(url, {
         method: 'GET',
         timeout: 2 * 1000,
-        followRedirect: true
-    }).then((response) => {
+        followRedirect: true,
+        cookieJar
+    }).then((pageResponse) => {
         // url changed after fetch, see if we were redirected to a known oembed
-        if (response.url !== url) {
-            ({url, provider} = findUrlWithProvider(response.url));
+        if (pageResponse.url !== url) {
+            ({url, provider} = findUrlWithProvider(pageResponse.url));
             if (provider) {
                 return knownProvider(url);
             }
@@ -137,7 +152,7 @@ function fetchOembedData(_url) {
         // check for <link rel="alternate" type="application/json+oembed"> element
         let oembedUrl;
         try {
-            oembedUrl = cheerio('link[type="application/json+oembed"]', response.body).attr('href');
+            oembedUrl = cheerio('link[type="application/json+oembed"]', pageResponse.body).attr('href');
         } catch (e) {
             return unknownProvider(url);
         }
@@ -153,11 +168,12 @@ function fetchOembedData(_url) {
                 method: 'GET',
                 json: true,
                 timeout: 2 * 1000,
-                followRedirect: true
-            }).then((response) => {
+                followRedirect: true,
+                cookieJar
+            }).then((oembedResponse) => {
                 // validate the fetched json against the oembed spec to avoid
                 // leaking non-oembed responses
-                const body = response.body;
+                const body = oembedResponse.body;
                 const hasRequiredFields = body.type && body.version;
                 const hasValidType = ['photo', 'video', 'link', 'rich'].includes(body.type);
 
@@ -197,6 +213,18 @@ function fetchOembedData(_url) {
     });
 }
 
+function errorHandler(url) {
+    return function (err) {
+        // allow specific validation errors through for better error messages
+        if (errors.utils.isIgnitionError(err) && err.errorType === 'ValidationError') {
+            return Promise.reject(err);
+        }
+
+        // default to unknown provider to avoid leaking any app specifics
+        return unknownProvider(url);
+    };
+}
+
 module.exports = {
     docName: 'oembed',
 
@@ -212,7 +240,7 @@ module.exports = {
 
             if (type === 'bookmark') {
                 return fetchBookmarkData(url)
-                    .catch(() => unknownProvider(url));
+                    .catch(errorHandler(url));
             }
 
             return fetchOembedData(url).then((response) => {
@@ -225,9 +253,7 @@ module.exports = {
                     return unknownProvider(url);
                 }
                 return response;
-            }).catch(() => {
-                return unknownProvider(url);
-            });
+            }).catch(errorHandler(url));
         }
     }
 };

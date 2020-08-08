@@ -1,14 +1,14 @@
-version: '3.1'
+version: "3.1"
 
 services:
   ghost:
     build: .
-    image: hatamiarash7/website-v3
-    container_name: website-v3
+    image: hatamiarash7/website-v3:3.0.1
+    container_name: ghost
     restart: always
     environment:
       NODE_ENV: production
-      url: "http://localhost:2369"
+      url: "https://arash-hatami.ir"
       server__host: "0.0.0.0"
       server__port: 2369
       database__client: "sqlite3"
@@ -20,7 +20,32 @@ services:
       logging__rotation__enabled: "true"
       logging__rotation__count: 15
       logging__rotation__period: "1d"
-    ports:
-      - 2369:2369
     volumes:
       - ./content:/home/arash/.build/release/content
+      - ./core/frontend:/home/arash/.build/release/core/frontend
+    networks:
+      - website
+      - traefik
+    labels:
+      - "traefik.enable=true"
+      - "traefik.docker.network=traefik"
+      # HTTPS
+      - "traefik.http.routers.ghost.rule=Host(`arash-hatami.ir`)"
+      - "traefik.http.routers.ghost.tls.certresolver=letsencrypt"
+      - "traefik.http.routers.ghost.entrypoints=websecure"
+      - "traefik.http.routers.ghost.service=ghost"
+      - "traefik.http.services.ghost.loadbalancer.server.port=2369"
+      - "traefik.http.middlewares.myHeader.headers.customresponseheaders.AH-Author=ArashHatami"
+      - "traefik.http.middlewares.myHeader.headers.customresponseheaders.AH-Version=3"
+      # Redirect
+      - "traefik.http.routers.ghost-http.rule=Host(`arash-hatami.ir`)"
+      - "traefik.http.routers.ghost-http.entrypoints=web"
+      - "traefik.http.routers.ghost-http.middlewares=ghost-https@docker"
+      - "traefik.http.middlewares.ghost-https.redirectscheme.scheme=https"
+
+networks:
+  website:
+    external: false
+    driver: bridge
+  traefik:
+    external: true

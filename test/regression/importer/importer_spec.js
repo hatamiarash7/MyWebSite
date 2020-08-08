@@ -2,7 +2,7 @@ const should = require('should');
 const sinon = require('sinon');
 const testUtils = require('../../utils');
 const Promise = require('bluebird');
-const moment = require('moment');
+const moment = require('moment-timezone');
 const ObjectId = require('bson-objectid');
 const assert = require('assert');
 const _ = require('lodash');
@@ -920,22 +920,53 @@ describe('Integration: Importer', function () {
                 value: '[{\\"url\\":\\"https://hook.slack.com\\"}]'
             });
 
-            exportData.data.settings[1] = testUtils.DataGenerator.forKnex.createSetting({
-                key: 'permalinks',
-                value: '/:primary_author/:slug/'
-            });
-
             return dataImporter.doImport(exportData, importOptions)
                 .then(function (imported) {
-                    imported.problems.length.should.eql(1);
+                    imported.problems.length.should.eql(0);
                     return models.Settings.findOne(_.merge({key: 'slack'}, testUtils.context.internal));
                 })
                 .then(function (result) {
                     result.attributes.value.should.eql('[{"url":""}]');
-                    return models.Settings.findOne(_.merge({key: 'permalinks'}, testUtils.context.internal));
+                });
+        });
+
+        it('imports settings fields deprecated in v2 and removed in v3: slack hook, permalinks', function () {
+            const exportData = exportedLatestBody().db[0];
+
+            exportData.data.settings[0] = testUtils.DataGenerator.forKnex.createSetting({
+                key: 'default_locale',
+                value: 'ua'
+            });
+
+            exportData.data.settings[1] = testUtils.DataGenerator.forKnex.createSetting({
+                key: 'active_timezone',
+                value: 'Pacific/Auckland'
+            });
+
+            exportData.data.settings[2] = testUtils.DataGenerator.forKnex.createSetting({
+                key: 'ghost_foot',
+                value: 'AVADA KEDAVRA'
+            });
+
+            return dataImporter.doImport(exportData, importOptions)
+                .then(function (imported) {
+                    imported.problems.length.should.eql(0);
+                    return models.Settings.findOne(_.merge({key: 'lang'}, testUtils.context.internal));
                 })
-                .then((result) => {
-                    result.attributes.value.should.eql('/:slug/');
+                .then(function (result) {
+                    result.attributes.value.should.eql('ua');
+                })
+                .then(function () {
+                    return models.Settings.findOne(_.merge({key: 'timezone'}, testUtils.context.internal));
+                })
+                .then(function (result) {
+                    result.attributes.value.should.eql('Pacific/Auckland');
+                })
+                .then(function () {
+                    return models.Settings.findOne(_.merge({key: 'codeinjection_foot'}, testUtils.context.internal));
+                })
+                .then(function (result) {
+                    result.attributes.value.should.eql('AVADA KEDAVRA');
                 });
         });
 
@@ -952,11 +983,6 @@ describe('Integration: Importer', function () {
                 value: '0'
             });
 
-            exportData.data.settings[2] = testUtils.DataGenerator.forKnex.createSetting({
-                key: 'force_i18n',
-                value: false
-            });
-
             return dataImporter.doImport(exportData, importOptions)
                 .then(function (imported) {
                     imported.problems.length.should.eql(0);
@@ -965,10 +991,6 @@ describe('Integration: Importer', function () {
                 .then(function (result) {
                     result.attributes.value.should.eql(true);
                     return models.Settings.findOne(_.merge({key: 'is_private'}, testUtils.context.internal));
-                })
-                .then((result) => {
-                    result.attributes.value.should.eql(false);
-                    return models.Settings.findOne(_.merge({key: 'force_i18n'}, testUtils.context.internal));
                 })
                 .then((result) => {
                     result.attributes.value.should.eql(false);
@@ -983,13 +1005,6 @@ describe('Integration: Importer', function () {
                     return db
                         .knex('settings')
                         .where('key', 'is_private');
-                })
-                .then((result) => {
-                    result[0].value.should.eql('false');
-
-                    return db
-                        .knex('settings')
-                        .where('key', 'force_i18n');
                 })
                 .then((result) => {
                     result[0].value.should.eql('false');
@@ -1164,10 +1179,10 @@ describe('Integration: Importer', function () {
                     posts.length.should.eql(2);
 
                     posts[0].mobiledoc.should.eql('{"version":"0.3.1","markups":[],"atoms":[],"cards":[["markdown",{"cardName":"markdown","markdown":"## Post Content"}],["image",{"src":"source2","cardWidth":"not-wide"}]],"sections":[[10,0],[10,1]]}');
-                    posts[0].html.should.eql('<!--kg-card-begin: markdown--><h2 id="postcontent">Post Content</h2>\n<!--kg-card-end: markdown--><figure class="kg-card kg-image-card kg-width-not-wide"><img src="source2" class="kg-image"></figure>');
+                    posts[0].html.should.eql('<!--kg-card-begin: markdown--><h2 id="postcontent">Post Content</h2>\n<!--kg-card-end: markdown--><figure class="kg-card kg-image-card kg-width-not-wide"><img src="source2" class="kg-image" alt></figure>');
 
                     posts[1].mobiledoc.should.eql('{"version":"0.3.1","markups":[],"atoms":[],"cards":[["image",{"src":"source","cardWidth":"wide"}],["markdown",{"cardName":"markdown","markdown":"# Post Content"}]],"sections":[[10,0],[10,1]]}');
-                    posts[1].html.should.eql('<figure class="kg-card kg-image-card kg-width-wide"><img src="source" class="kg-image"></figure><!--kg-card-begin: markdown--><h1 id="postcontent">Post Content</h1>\n<!--kg-card-end: markdown-->');
+                    posts[1].html.should.eql('<figure class="kg-card kg-image-card kg-width-wide"><img src="source" class="kg-image" alt></figure><!--kg-card-begin: markdown--><h1 id="postcontent">Post Content</h1>\n<!--kg-card-end: markdown-->');
                 });
         });
     });
@@ -1506,10 +1521,10 @@ describe('1.0', function () {
                     posts.length.should.eql(2);
 
                     posts[0].mobiledoc.should.eql('{"version":"0.3.1","markups":[],"atoms":[],"cards":[["markdown",{"cardName":"markdown","markdown":"## Post Content"}],["image",{"src":"source2","cardWidth":"not-wide"}]],"sections":[[10,0],[10,1]]}');
-                    posts[0].html.should.eql('<!--kg-card-begin: markdown--><h2 id="postcontent">Post Content</h2>\n<!--kg-card-end: markdown--><figure class="kg-card kg-image-card kg-width-not-wide"><img src="source2" class="kg-image"></figure>');
+                    posts[0].html.should.eql('<!--kg-card-begin: markdown--><h2 id="postcontent">Post Content</h2>\n<!--kg-card-end: markdown--><figure class="kg-card kg-image-card kg-width-not-wide"><img src="source2" class="kg-image" alt></figure>');
 
                     posts[1].mobiledoc.should.eql('{"version":"0.3.1","markups":[],"atoms":[],"cards":[["image",{"src":"source","cardWidth":"wide"}],["markdown",{"cardName":"markdown","markdown":"# Post Content"}]],"sections":[[10,0],[10,1]]}');
-                    posts[1].html.should.eql('<figure class="kg-card kg-image-card kg-width-wide"><img src="source" class="kg-image"></figure><!--kg-card-begin: markdown--><h1 id="postcontent">Post Content</h1>\n<!--kg-card-end: markdown-->');
+                    posts[1].html.should.eql('<figure class="kg-card kg-image-card kg-width-wide"><img src="source" class="kg-image" alt></figure><!--kg-card-begin: markdown--><h1 id="postcontent">Post Content</h1>\n<!--kg-card-end: markdown-->');
                 });
         });
     });

@@ -1,0 +1,26 @@
+version: "3.1"
+
+services:
+  ghost:
+    build: .
+    image: hatamiarash7/website-v3
+    container_name: ghost
+    restart: always
+    environment:
+      url: "http://localhost:2369"
+      server__host: "0.0.0.0"
+      server__port: 2369
+      database__client: "sqlite3"
+      database__connection__filename: "content/data/dev.db"
+      database__useNullAsDefault: "true"
+      database__debug: "false"
+      paths__contentPath: "content/"
+      logging__level: "info"
+      logging__rotation__enabled: "true"
+      logging__rotation__count: 15
+      logging__rotation__period: "1d"
+    ports:
+      - 2369:2369
+    volumes:
+      - ./content:/home/arash/.build/release/content
+      - ./core/frontend:/home/arash/.build/release/core/frontend

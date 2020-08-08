@@ -4,6 +4,6 @@
 
 https://arash-hatami.ir
 
-- React v16
+- Handlebars
 - Ghost platform
 - [Custom Theme](https://github.com/hatamiarash7/MyWebSite_Theme)

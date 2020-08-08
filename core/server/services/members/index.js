@@ -2,6 +2,7 @@ const MembersSSR = require('@tryghost/members-ssr');
 
 const MembersConfigProvider = require('./config');
 const createMembersApiInstance = require('./api');
+const createMembersSettingsInstance = require('./settings');
 const {events} = require('../../lib/common');
 const logging = require('../../../shared/logging');
 const urlUtils = require('../../../shared/url-utils');
@@ -18,10 +19,23 @@ const membersConfig = new MembersConfigProvider({
 });
 
 let membersApi;
+let membersSettings;
 
 // Bind to events to automatically keep subscription info up-to-date from settings
 events.on('settings.edited', function updateSettingFromModel(settingModel) {
-    if (!['members_subscription_settings'].includes(settingModel.get('key'))) {
+    if (![
+        'members_allow_free_signup',
+        'members_from_address',
+        'stripe_publishable_key',
+        'stripe_secret_key',
+        'stripe_product_name',
+        'stripe_plans',
+        'stripe_connect_publishable_key',
+        'stripe_connect_secret_key',
+        'stripe_connect_livemode',
+        'stripe_connect_display_name',
+        'stripe_connect_account_id'
+    ].includes(settingModel.get('key'))) {
         return;
     }
 
@@ -48,6 +62,13 @@ const membersService = {
             });
         }
         return membersApi;
+    },
+
+    get settings() {
+        if (!membersSettings) {
+            membersSettings = createMembersSettingsInstance(membersConfig);
+        }
+        return membersSettings;
     },
 
     ssr: MembersSSR({

@@ -2,7 +2,7 @@ const juice = require('juice');
 const template = require('./template');
 const settingsCache = require('../../services/settings/cache');
 const urlUtils = require('../../../shared/url-utils');
-const moment = require('moment');
+const moment = require('moment-timezone');
 const cheerio = require('cheerio');
 const api = require('../../api');
 const {URL} = require('url');
@@ -97,7 +97,7 @@ const _parseReplacements = (emailTmpl) => {
 const serialize = async (postModel, options = {isBrowserPreview: false}) => {
     const post = await serializePostModel(postModel);
 
-    const timezone = settingsCache.get('active_timezone');
+    const timezone = settingsCache.get('timezone');
     const momentDate = post.published_at ? moment(post.published_at) : moment();
     post.published_at = momentDate.tz(timezone).format('DD MMM YYYY');
 

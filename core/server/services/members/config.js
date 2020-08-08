@@ -34,12 +34,14 @@ class MembersConfigProvider {
         return domain && domain[1];
     }
 
-    /**
-     */
     getEmailFromAddress() {
-        const subscriptionSettings = this._settingsCache.get('members_subscription_settings') || {};
+        const fromAddress = this._settingsCache.get('members_from_address') || 'noreply';
 
-        return `${subscriptionSettings.fromAddress || 'noreply'}@${this._getDomain()}`;
+        // Any fromAddress without domain uses site domain, like default setting `noreply`
+        if (fromAddress.indexOf('@') < 0) {
+            return `${fromAddress}@${this._getDomain()}`;
+        }
+        return fromAddress;
     }
 
     getPublicPlans() {
@@ -48,20 +50,21 @@ class MembersConfigProvider {
             AUD: '$',
             CAD: '$',
             GBP: '£',
-            EUR: '€'
+            EUR: '€',
+            INR: '₹'
         };
+
         const defaultPriceData = {
             monthly: 0,
-            yearly: 0
+            yearly: 0,
+            currency: 'USD',
+            currency_symbol: CURRENCY_SYMBOLS.USD
         };
 
         try {
-            const membersSettings = this._settingsCache.get('members_subscription_settings');
-            const stripeProcessor = membersSettings.paymentProcessors.find(
-                processor => processor.adapter === 'stripe'
-            );
+            const plans = this._settingsCache.get('stripe_plans');
 
-            const priceData = stripeProcessor.config.plans.reduce((prices, plan) => {
+            const priceData = plans.reduce((prices, plan) => {
                 const numberAmount = 0 + plan.amount;
                 const dollarAmount = numberAmount ? Math.round(numberAmount / 100) : 0;
                 return Object.assign(prices, {
@@ -69,7 +72,7 @@ class MembersConfigProvider {
                 });
             }, {});
 
-            priceData.currency = String.prototype.toUpperCase.call(stripeProcessor.config.currency || 'usd');
+            priceData.currency = plans[0].currency || 'USD';
             priceData.currency_symbol = CURRENCY_SYMBOLS[priceData.currency];
 
             if (Number.isInteger(priceData.monthly) && Number.isInteger(priceData.yearly)) {
@@ -83,50 +86,51 @@ class MembersConfigProvider {
     }
 
     /**
-     * @function getStripeAPIKeys
-     * @desc Gets the stripe api keys from settings, respecting the stripeDirect config
-     *
-     * @param {string} publicKey - The publicKey to use if stripeDirect is enabled
-     * @param {string} secretKey - The secretKey to use if stripeDirect is enabled
-     *
-     * @returns {{publicKey: string, secretKey: string}}
+     * @param {'direct' | 'connect'} type - The "type" of keys to fetch from settings
+     * @returns {{publicKey: string, secretKey: string} | null}
      */
-    getStripeAPIKeys(publicKey, secretKey) {
-        const stripeDirect = this._config.get('stripeDirect');
-        const stripeConnectIntegration = this._settingsCache.get('stripe_connect_integration');
-        const hasStripeConnectKeys = stripeConnectIntegration.secret_key && stripeConnectIntegration.public_key;
+    getStripeKeys(type) {
+        if (type !== 'direct' && type !== 'connect') {
+            throw new Error();
+        }
 
-        if (stripeDirect || !hasStripeConnectKeys) {
-            return {
-                publicKey,
-                secretKey
-            };
+        const secretKey = this._settingsCache.get(`stripe_${type === 'connect' ? 'connect_' : ''}secret_key`);
+        const publicKey = this._settingsCache.get(`stripe_${type === 'connect' ? 'connect_' : ''}publishable_key`);
+
+        if (!secretKey || !publicKey) {
+            return null;
         }
 
         return {
-            publicKey: stripeConnectIntegration.public_key,
-            secretKey: stripeConnectIntegration.secret_key
+            secretKey,
+            publicKey
         };
     }
 
-    getStripePaymentConfig() {
-        const subscriptionSettings = this._settingsCache.get('members_subscription_settings');
+    /**
+     * @returns {{publicKey: string, secretKey: string} | null}
+     */
+    getActiveStripeKeys() {
+        const stripeDirect = this._config.get('stripeDirect');
 
-        const stripePaymentProcessor = subscriptionSettings.paymentProcessors.find(
-            paymentProcessor => paymentProcessor.adapter === 'stripe'
-        );
-
-        if (!stripePaymentProcessor || !stripePaymentProcessor.config) {
-            return null;
+        if (stripeDirect) {
+            return this.getStripeKeys('direct');
         }
 
-        if (!stripePaymentProcessor.config.public_token || !stripePaymentProcessor.config.secret_token) {
-            return null;
+        const connectKeys = this.getStripeKeys('connect');
+
+        if (!connectKeys) {
+            return this.getStripeKeys('direct');
         }
 
-        // NOTE: "Complimentary" plan has to be first in the queue so it is created even if regular plans are not configured
-        stripePaymentProcessor.config.plans.unshift(COMPLIMENTARY_PLAN);
+        return connectKeys;
+    }
 
+    isStripeConnected() {
+        return this.getActiveStripeKeys() !== null;
+    }
+
+    getStripeUrlConfig() {
         const siteUrl = this._urlUtils.getSiteUrl();
 
         const webhookHandlerUrl = new URL('/members/webhooks/stripe', siteUrl);
@@ -141,21 +145,39 @@ class MembersConfigProvider {
         const billingCancelUrl = new URL(siteUrl);
         billingCancelUrl.searchParams.set('stripe', 'billing-update-cancel');
 
-        const stripeApiKeys = this.getStripeAPIKeys(
-            stripePaymentProcessor.config.public_token,
-            stripePaymentProcessor.config.secret_token
-        );
+        return {
+            checkoutSuccess: checkoutSuccessUrl.href,
+            checkoutCancel: checkoutCancelUrl.href,
+            billingSuccess: billingSuccessUrl.href,
+            billingCancel: billingCancelUrl.href,
+            webhookHandler: webhookHandlerUrl.href
+        };
+    }
+
+    getStripePaymentConfig() {
+        if (!this.isStripeConnected()) {
+            return null;
+        }
+
+        const stripeApiKeys = this.getActiveStripeKeys();
+        const urls = this.getStripeUrlConfig();
+
+        if (!stripeApiKeys) {
+            return null;
+        }
 
         return {
             publicKey: stripeApiKeys.publicKey,
             secretKey: stripeApiKeys.secretKey,
-            checkoutSuccessUrl: checkoutSuccessUrl.href,
-            checkoutCancelUrl: checkoutCancelUrl.href,
-            billingSuccessUrl: billingSuccessUrl.href,
-            billingCancelUrl: billingCancelUrl.href,
-            webhookHandlerUrl: webhookHandlerUrl.href,
-            product: stripePaymentProcessor.config.product,
-            plans: stripePaymentProcessor.config.plans,
+            checkoutSuccessUrl: urls.checkoutSuccess,
+            checkoutCancelUrl: urls.checkoutCancel,
+            billingSuccessUrl: urls.billingSuccess,
+            billingCancelUrl: urls.billingCancel,
+            webhookHandlerUrl: urls.webhookHandler,
+            product: {
+                name: this._settingsCache.get('stripe_product_name')
+            },
+            plans: [COMPLIMENTARY_PLAN].concat(this._settingsCache.get('stripe_plans')),
             appInfo: {
                 name: 'Ghost',
                 partner_id: 'pp_partner_DKmRVtTs4j9pwZ',
@@ -180,8 +202,7 @@ class MembersConfigProvider {
     }
 
     getAllowSelfSignup() {
-        const subscriptionSettings = this._settingsCache.get('members_subscription_settings');
-        return subscriptionSettings.allowSelfSignup;
+        return this._settingsCache.get('members_allow_free_signup');
     }
 
     getTokenConfig() {
