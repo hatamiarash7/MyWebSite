@@ -11,9 +11,9 @@ return [
     | messages sent by your application. Alternative mailers may be setup
     | and used as needed; however, this mailer will be used by default.
     |
-    */
+     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default'  => env('MAIL_MAILER', 'smtp'),
 
     /*
     |--------------------------------------------------------------------------
@@ -31,45 +31,45 @@ return [
     | Supported: "smtp", "sendmail", "mailgun", "ses",
     |            "postmark", "log", "array"
     |
-    */
+     */
 
-    'mailers' => [
-        'smtp' => [
-            'transport' => 'smtp',
-            'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
-            'port' => env('MAIL_PORT', 587),
+    'mailers'  => [
+        'smtp'     => [
+            'transport'  => 'smtp',
+            'host'       => env('MAIL_HOST', 'smtp.mailgun.org'),
+            'port'       => env('MAIL_PORT', 587),
             'encryption' => env('MAIL_ENCRYPTION', 'tls'),
-            'username' => env('MAIL_USERNAME'),
-            'password' => env('MAIL_PASSWORD'),
-            'timeout' => null,
-            'auth_mode' => null,
+            'username'   => env('MAIL_USERNAME'),
+            'password'   => env('MAIL_PASSWORD'),
+            'timeout'    => null,
+            'auth_mode'  => null
         ],
 
-        'ses' => [
-            'transport' => 'ses',
+        'ses'      => [
+            'transport' => 'ses'
         ],
 
-        'mailgun' => [
-            'transport' => 'mailgun',
+        'mailgun'  => [
+            'transport' => 'mailgun'
         ],
 
         'postmark' => [
-            'transport' => 'postmark',
+            'transport' => 'postmark'
         ],
 
         'sendmail' => [
             'transport' => 'sendmail',
-            'path' => '/usr/sbin/sendmail -bs',
+            'path'      => '/usr/sbin/sendmail -bs'
         ],
 
-        'log' => [
+        'log'      => [
             'transport' => 'log',
-            'channel' => env('MAIL_LOG_CHANNEL'),
+            'channel'   => env('MAIL_LOG_CHANNEL')
         ],
 
-        'array' => [
-            'transport' => 'array',
-        ],
+        'array'    => [
+            'transport' => 'array'
+        ]
     ],
 
     /*
@@ -81,11 +81,11 @@ return [
     | the same address. Here, you may specify a name and address that is
     | used globally for all e-mails that are sent by your application.
     |
-    */
+     */
 
-    'from' => [
+    'from'     => [
         'address' => env('MAIL_FROM_ADDRESS', 'hello@example.com'),
-        'name' => env('MAIL_FROM_NAME', 'Example'),
+        'name'    => env('MAIL_FROM_NAME', 'Example')
     ],
 
     /*
@@ -97,14 +97,14 @@ return [
     | theme and component paths here, allowing you to customize the design
     | of the emails. Or, you may simply stick with the Laravel defaults!
     |
-    */
+     */
 
     'markdown' => [
         'theme' => 'default',
 
         'paths' => [
-            resource_path('views/vendor/mail'),
-        ],
-    ],
+            resource_path('views/vendor/mail')
+        ]
+    ]
 
 ];
