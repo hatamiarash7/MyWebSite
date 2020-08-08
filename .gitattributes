@@ -1,6 +1,5 @@
-# enforce unix style line endings
-*.js text eol=lf
-*.md text eol=lf
-*.json text eol=lf
-*.yml text eol=lf
-*.hbs text eol=lf
+* text=auto
+*.css linguist-vendored
+*.scss linguist-vendored
+*.js linguist-vendored
+CHANGELOG.md export-ignore
