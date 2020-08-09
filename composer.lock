@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0eedb128e640b8f89cc8a17ba55a5f56",
+    "content-hash": "c7276119af0af050064962dcc2b94ed0",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -740,6 +740,76 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "hatamiarash7/jdf",
+            "version": "2.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/hatamiarash7/Laravel-JDF.git",
+                "reference": "fd2ec4a6beda29adb7b1c35f8de33bfbf0d5f184"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/hatamiarash7/Laravel-JDF/zipball/fd2ec4a6beda29adb7b1c35f8de33bfbf0d5f184",
+                "reference": "fd2ec4a6beda29adb7b1c35f8de33bfbf0d5f184",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "^5.5|^6|^7",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.5",
+                "phpunit/phpunit": "^7.0"
+            },
+            "suggest": {
+                "laravel/framework": "Required for testing (~5.8).",
+                "phpunit/phpunit": "Allow to use PHPUnit for testing (~7.0)."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Hatamiarash7\\JDF\\JDFServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Hatamiarash7\\JDF\\": "src"
+                },
+                "classmap": [
+                    "src"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0"
+            ],
+            "authors": [
+                {
+                    "name": "Arash Hatami",
+                    "email": "hatamiarash7@gmail.com",
+                    "homepage": "https://github.com/hatamiarash7"
+                }
+            ],
+            "description": "JDF Library for Laravel",
+            "funding": [
+                {
+                    "url": "https://idpay.ir/hatamiarash7",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://yekpay.me/hatamiarash7",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://ko-fi.com/hatamiarash7",
+                    "type": "ko_fi"
+                }
+            ],
+            "time": "2020-05-02T13:33:40+00:00"
         },
         {
             "name": "laravel/framework",
