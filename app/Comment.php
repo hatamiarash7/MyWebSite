@@ -38,6 +38,15 @@ use Illuminate\Support\Carbon;
  */
 class Comment extends Model
 {
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'name', 'email', 'body'
+    ];
+
     public static function boot()
     {
         parent::boot();

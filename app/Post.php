@@ -52,6 +52,15 @@ use Illuminate\Support\Carbon;
 class Post extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'description', 'header', 'slug', 'body', 'draft'
+    ];
+
+    /**
      * The categories
      */
     public function categories(): BelongsToMany

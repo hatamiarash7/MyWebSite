@@ -32,6 +32,15 @@ use Illuminate\Support\Carbon;
 class Tag extends Model
 {
     /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'title', 'count'
+    ];
+
+    /**
      * The Posts
      */
     public function posts(): BelongsToMany
