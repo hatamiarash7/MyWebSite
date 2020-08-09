@@ -1,0 +1,42 @@
+User:
+  - name
+  - email
+  - title
+  - thumbnail / gravatar
+  - website
+  - twitter
+  - facebook
+  - instagram
+  - telegram
+  - github
+  - stackoverflow
+  - date
+
+Category:
+  - title
+  - description
+  - icon
+  - color
+  - date
+
+Tag:
+  - title
+  - count
+  - date
+
+Post:
+  - title
+  - description
+  - header
+  - slug
+  - body
+  - draft
+  - read_time
+  - date
+
+Comment:
+  - name
+  - email
+  - body
+  - confirmed
+  - date
