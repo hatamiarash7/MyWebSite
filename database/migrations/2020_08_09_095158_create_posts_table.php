@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->string('header');
             $table->string('slug');
             $table->longtext('body');
-            $table->tinyinteger('draft');
+            $table->tinyInteger('draft');
             $table->integer('read_time');
 
             $table->string('create_date');
