@@ -11,6 +11,10 @@ mix
         'resources/sass/dashboard/argon.scss',
         'public/dashboard-assets/css/main.css'
     )
+    .sass(
+        'resources/sass/dashboard/arash.scss',
+        'public/dashboard-assets/css/arash.css'
+    )
     .copyDirectory(
         'resources/fonts/nucleo',
         'public/dashboard-assets/fonts/nucleo'
@@ -39,6 +43,15 @@ mix.options({
 
 if (mix.inProduction()) {
     mix.version();
+} else {
+    mix.browserSync({
+        watch: true,
+        open: true,
+        proxy: "http://localhost:8000",
+        files: [
+            'app/**/*',
+            'resources/views/**/*',
+            'routes/**/*'
+        ]
+    });
 }
-
-mix.browserSync("http://localhost:8000");
