@@ -5,6 +5,3 @@
 
 https://arash-hatami.ir
 </div>
-
-- Laravel
-- Custom themes
