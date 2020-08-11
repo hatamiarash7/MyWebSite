@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Cairo);@charset "UTF-8";
+@charset "UTF-8";
 /*!
  * Bootstrap v4.1.3 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -28778,7 +28778,7 @@ html:not([dir=rtl]) .noUi-horizontal .noUi-handle {
 *,
 .form-control {
   text-align: right;
-  font-family: "Cairo", sans-serif;
+  font-family: sans-serif;
 }
 
 .text-right {
