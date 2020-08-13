@@ -11,7 +11,7 @@
     <link href="{{ asset('dashboard-assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" rel="stylesheet">
     <link href="{{ mix('dashboard-assets/css/vazir.css') }}" rel="stylesheet">
     <link href="{{ mix('dashboard-assets/css/main.css') }}" rel="stylesheet">
-    <link href="{{ mix('dashboard-assets/css/custom.css') }}" rel="stylesheet">
+    <link href="{{ mix('dashboard-assets/css/arash.css') }}" rel="stylesheet">
 </head>
 <body>
 <nav class="navbar navbar-vertical fixed-left navbar-expand-md navbar-light bg-white" id="sidenav-main">
@@ -42,7 +42,8 @@
                    aria-expanded="false">
                     <div class="media align-items-center">
                         <span class="avatar avatar-sm rounded-circle">
-                            <img alt="Image placeholder" src="{{ asset('dashboard-assets/img/theme/team-1-800x800.jpg') }}">
+                            <img alt="Image placeholder"
+                                 src="{{ asset('dashboard-assets/img/theme/team-1-800x800.jpg') }}">
                         </span>
                     </div>
                 </a>
@@ -113,44 +114,8 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./examples/profile.html">
-                        <i class="ni ni-single-02 text-yellow"></i> الصفحه الشحصية
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./examples/tables.html">
-                        <i class="ni ni-bullet-list-67 text-red"></i> الجداول
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./examples/login.html">
-                        <i class="ni ni-key-25 text-info"></i> تسجيل الدخول
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="./examples/register.html">
-                        <i class="ni ni-circle-08 text-pink"></i> التسجيل
-                    </a>
-                </li>
-            </ul>
-            <hr class="my-3">
-            <h6 class="navbar-heading text-muted">الوثائق</h6>
-            <ul class="navbar-nav mb-md-3">
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="https://demos.creative-tim.com/argon-dashboard/docs/getting-started/overview.html">
-                        <i class="ni ni-spaceship"></i> إبدا الأن
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="https://demos.creative-tim.com/argon-dashboard/docs/foundation/colors.html">
-                        <i class="ni ni-palette"></i> الاساسيات
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link"
-                       href="https://demos.creative-tim.com/argon-dashboard/docs/components/alerts.html">
-                        <i class="ni ni-ui-04"></i> الأجزاء
+                        <i class="ni ni-single-02 text-yellow"></i>
+                        نظرات
                     </a>
                 </li>
             </ul>
@@ -162,52 +127,34 @@
         <div class="container-fluid">
             <ul class="navbar-nav align-items-center d-none d-md-flex">
                 <li class="nav-item dropdown">
-                    <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true"
-                       aria-expanded="false">
+                    <a aria-expanded="false" aria-haspopup="true" class="nav-link pr-0" data-toggle="dropdown" href="#"
+                       role="button">
                         <div class="media align-items-center">
                             <span class="avatar avatar-sm rounded-circle">
                                 <img alt="Image placeholder"
-                                     src="{{ asset('dashboard-assets/img/theme/team-2-800x800.jpg') }}">
+                                     src="{{ auth()->user()->gravatar }}">
                             </span>
                         </div>
                     </a>
                     <div class="dropdown-menu dropdown-menu-arrow dropdown-menu-right">
-                        <div class=" dropdown-header noti-title">
-                            <h6 class="text-overflow m-0">آرش حاتمی</h6>
-                        </div>
                         <a href="./examples/profile.html" class="dropdown-item">
                             <i class="ni ni-single-02"></i>
-                            <span>الحساب الشخصي</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-settings-gear-65"></i>
-                            <span>الأعدادات</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-calendar-grid-58"></i>
-                            <span>اخر الاخبار</span>
-                        </a>
-                        <a href="./examples/profile.html" class="dropdown-item">
-                            <i class="ni ni-support-16"></i>
-                            <span>مساعده</span>
+                            <span>پروفایل</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="#" class="dropdown-item">
                             <i class="ni ni-user-run"></i>
-                            <span>تسجيل خروج</span>
+                            <span>خروج</span>
                         </a>
                     </div>
                 </li>
             </ul>
         </div>
     </nav>
-    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-        <div class="container-fluid">
-            <div class="header-body">
-
-            </div>
-        </div>
+    <div class="header bg-gradient-primary pb-8 pt-5 pt-md-7">
+        <div class="container-fluid"></div>
     </div>
+    @yield('content')
 </div>
 <script src="{{ asset('dashboard-assets/vendor/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('dashboard-assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
