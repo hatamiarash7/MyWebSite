@@ -101,20 +101,20 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./examples/icons.html">
-                        <i class="ni ni-planet text-blue"></i>
+                    <a class="nav-link" href="{{ route('dashboard::category.index') }}">
+                        <i class="ni ni-books text-blue"></i>
                         دسته بندی ها
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./examples/maps.html">
-                        <i class="ni ni-pin-3 text-orange"></i>
+                        <i class="ni ni-single-copy-04 text-orange"></i>
                         پست ها
                     </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="./examples/profile.html">
-                        <i class="ni ni-single-02 text-yellow"></i>
+                        <i class="ni ni-satisfied text-green"></i>
                         نظرات
                     </a>
                 </li>
@@ -160,6 +160,16 @@
 <script src="{{ asset('dashboard-assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
 <script src="{{ asset('dashboard-assets/vendor/chart.js/dist/Chart.min.js') }}"></script>
 <script src="{{ asset('dashboard-assets/vendor/chart.js/dist/Chart.extension.js') }}"></script>
-<script src="{{ mix('dashboard-assets/js/argon.min.js') }}"></script>
+<script src="{{ asset('dashboard-assets/js/argon.min.js') }}"></script>
+<script src="{{ asset('dashboard-assets/js/bootstrap-notify.js') }}"></script>
+<script src="{{ asset('dashboard-assets/js/notification.js') }}"></script>
+<script type="text/javascript">
+    @if (Session::has('message'))
+    showNotification('bottom', 'center', 'success', '{{ Session::get("message") }}');
+    @endif
+    @if (Session::has('error'))
+    showNotification('bottom', 'center', 'danger', '{{ Session::get("message") }}');
+    @endif
+</script>
 </body>
 </html>
