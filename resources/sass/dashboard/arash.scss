@@ -2,6 +2,72 @@
     font-family: Vazir, sans-serif;
 }
 
-p, a, h1, h2, h3, h4, h5, h6, input, textarea, button, span, ul, li, div, label, .form-control {
+p, a, h1, h2, h3, h4, h5, h6, input, textarea, button, span, ul, li, div, label, tr, th, td, .form-control {
     font-family: Vazir, sans-serif !important;
+    letter-spacing: 0 !important;
+}
+
+a {
+    transition: all 250ms !important;
+}
+
+// Dashboard
+
+.navbar {
+    .container-fluid {
+        flex-direction: row-reverse;
+    }
+}
+
+.card {
+    .card-header {
+
+    }
+
+    .card-body {
+        .heading-small {
+            text-align: center;
+        }
+
+        .cat-list {
+            p {
+                text-align: center;
+            }
+
+            .table-responsive {
+                overflow-y: unset !important;
+                padding-bottom: 20px;
+
+                thead {
+                    th {
+                        text-align: center;
+                        font-weight: 500;
+                        color: #4a535e;
+                    }
+                }
+
+                .dropdown {
+                    .btn {
+                        &:hover {
+                            box-shadow: none;
+                            transform: none;
+                            color: #313437 !important;
+                        }
+                    }
+                }
+            }
+
+            .dropdown-menu {
+                transform: translate3d(0, -50px, 0) !important;
+                box-shadow: 0 5px 20px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
+
+.dot {
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    display: inline-block;
 }
