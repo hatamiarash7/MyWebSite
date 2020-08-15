@@ -27,9 +27,9 @@ mix
         'resources/img/dashboard',
         'public/dashboard-assets/img'
     )
-    .copy(
-        'resources/js/dashboard/argon.min.js',
-        'public/dashboard-assets/js/argon.min.js'
+    .copyDirectory(
+        'resources/js/dashboard',
+        'public/dashboard-assets/js'
     )
     .sourceMaps();
 
