@@ -38,6 +38,6 @@
 </div>
 <script src="{{ asset('dashboard-assets/vendor/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('dashboard-assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ mix('dashboard-assets/js/argon.min.js') }}"></script>
+<script src="{{ asset('dashboard-assets/js/argon.min.js') }}"></script>
 </body>
 </html>
