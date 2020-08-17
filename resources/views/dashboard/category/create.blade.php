@@ -6,7 +6,7 @@
             <div class="col">
                 <div class="card shadow">
                     <div class="card-header bg-transparent">
-                        <h3 class="mb-0">دسته بندی جدید</h3>
+                        <h3 class="mb-0 text-center">دسته بندی جدید</h3>
                     </div>
                     <form method="post" action="{{ route('dashboard::category.save') }}">
                         @csrf

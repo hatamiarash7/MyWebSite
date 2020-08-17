@@ -1,9 +1,11 @@
+$font: Vazir, sans-serif;
+
 * {
-    font-family: Vazir, sans-serif;
+    font-family: $font;
 }
 
 p, a, h1, h2, h3, h4, h5, h6, input, textarea, button, span, ul, li, div, label, tr, th, td, .form-control {
-    font-family: Vazir, sans-serif !important;
+    font-family: $font !important;
     letter-spacing: 0 !important;
 }
 
@@ -16,6 +18,12 @@ a {
 .navbar {
     .container-fluid {
         flex-direction: row-reverse;
+    }
+
+    .nav-link {
+        &:hover {
+            color: black !important;
+        }
     }
 }
 
@@ -70,4 +78,11 @@ a {
     width: 25px;
     border-radius: 50%;
     display: inline-block;
+}
+
+.alert {
+    text-align: center !important;
+    font-family: $font;
+    font-size: 16px;
+    border-radius: 50px;
 }
