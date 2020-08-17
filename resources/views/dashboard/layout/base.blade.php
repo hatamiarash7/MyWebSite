@@ -107,7 +107,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./examples/maps.html">
+                    <a class="nav-link" href="{{ route('dashboard::post.index') }}">
                         <i class="ni ni-single-copy-04 text-orange"></i>
                         پست ها
                     </a>
@@ -171,5 +171,6 @@
     showNotification('bottom', 'center', 'danger', '{{ Session::get("message") }}');
     @endif
 </script>
+@yield('script')
 </body>
 </html>
