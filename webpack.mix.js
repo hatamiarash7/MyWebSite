@@ -31,6 +31,10 @@ mix
         'resources/js/dashboard',
         'public/dashboard-assets/js'
     )
+    .js(
+        'resources/js/vendors/vendor.js',
+        'public/dashboard-assets/js'
+    )
     .sourceMaps();
 
 mix.options({

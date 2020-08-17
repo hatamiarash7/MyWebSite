@@ -1,0 +1,1 @@
+window.getSlug = require('speakingurl');
