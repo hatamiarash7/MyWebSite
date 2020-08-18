@@ -27,5 +27,9 @@
     },
     "dependencies": {
         "speakingurl": "^14.0.1"
-    }
+    },
+    "browserslist": [
+        "last 4 version",
+        "maintained node versions"
+    ]
 }
