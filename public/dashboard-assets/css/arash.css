@@ -27,11 +27,16 @@ td,
 }
 
 a {
+  -webkit-transition: all 250ms !important;
+  -o-transition: all 250ms !important;
   transition: all 250ms !important;
 }
 
 .navbar .container-fluid {
-  flex-direction: row-reverse;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }
 
 .navbar .nav-link:hover {
@@ -58,14 +63,23 @@ a {
 }
 
 .card .card-body .cat-list .table-responsive .dropdown .btn:hover {
-  box-shadow: none;
-  transform: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
   color: #313437 !important;
 }
 
 .card .card-body .cat-list .dropdown-menu {
-  transform: translate3d(0, -50px, 0) !important;
-  box-shadow: 0 5px 20px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+  -webkit-transform: translate3d(0, -50px, 0) !important;
+          transform: translate3d(0, -50px, 0) !important;
+  -webkit-box-shadow: 0 5px 20px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 5px 20px rgba(50, 50, 93, 0.1), 0 15px 35px rgba(50, 50, 93, 0.15), 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card .card-body .post-create #preview {
+  max-width: 100%;
 }
 
 .dot {
