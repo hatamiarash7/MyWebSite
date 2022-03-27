@@ -16,10 +16,11 @@ services:
       database__useNullAsDefault: "true"
       database__debug: "false"
       paths__contentPath: "content/"
-      logging__level: "info"
+      logging__level: "error"
       logging__rotation__enabled: "true"
       logging__rotation__count: 15
       logging__rotation__period: "1d"
+      privay__useUpdateCheck: "false"
     volumes:
       - ./content:/home/arash/.build/release/content
       - ./core/frontend:/home/arash/.build/release/core/frontend
