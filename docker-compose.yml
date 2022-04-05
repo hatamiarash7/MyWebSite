@@ -35,8 +35,16 @@ services:
       - "traefik.http.routers.ghost.entrypoints=websecure"
       - "traefik.http.routers.ghost.service=ghost"
       - "traefik.http.services.ghost.loadbalancer.server.port=2369"
-      - "traefik.http.middlewares.myHeader.headers.customresponseheaders.AH-Author=ArashHatami"
-      - "traefik.http.middlewares.myHeader.headers.customresponseheaders.AH-Version=3"
+      # Configure headers
+      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.AH-Author=ArashHatami"
+      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.AH-Version=3"
+      - "traefik.http.middlewares.WebsiteHeader.headers.forcestsheader=true"
+      - "traefik.http.middlewares.WebsiteHeader.headers.sslRedirect=true"
+      - "traefik.http.middlewares.WebsiteHeader.headers.STSPreload=true"
+      - "traefik.http.middlewares.WebsiteHeader.headers.ContentTypeNosniff=true"
+      - "traefik.http.middlewares.WebsiteHeader.headers.BrowserXssFilter=true"
+      - "traefik.http.middlewares.WebsiteHeader.headers.STSIncludeSubdomains=true"
+      - "traefik.http.middlewares.WebsiteHeader.headers.STSSeconds=315360000"
 
 networks:
   website:
