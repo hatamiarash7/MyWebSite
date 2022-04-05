@@ -34,10 +34,11 @@ services:
       - "traefik.http.routers.ghost.rule=Host(`arash-hatami.ir`)"
       - "traefik.http.routers.ghost.entrypoints=websecure"
       - "traefik.http.routers.ghost.service=ghost"
+      - "traefik.http.routers.ghost.middlewares=WebsiteHeader@docker"
       - "traefik.http.services.ghost.loadbalancer.server.port=2369"
       # Configure headers
-      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.AH-Author=ArashHatami"
-      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.AH-Version=3"
+      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.Website-Author=ArashHatami"
+      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.Website-Version=3"
       - "traefik.http.middlewares.WebsiteHeader.headers.forcestsheader=true"
       - "traefik.http.middlewares.WebsiteHeader.headers.sslRedirect=true"
       - "traefik.http.middlewares.WebsiteHeader.headers.STSPreload=true"
