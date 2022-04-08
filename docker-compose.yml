@@ -40,7 +40,6 @@ services:
       - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.Website-Author=ArashHatami"
       - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.Website-Version=3"
       - "traefik.http.middlewares.WebsiteHeader.headers.forcestsheader=true"
-      - "traefik.http.middlewares.WebsiteHeader.headers.sslRedirect=true"
       - "traefik.http.middlewares.WebsiteHeader.headers.STSPreload=true"
       - "traefik.http.middlewares.WebsiteHeader.headers.ContentTypeNosniff=true"
       - "traefik.http.middlewares.WebsiteHeader.headers.BrowserXssFilter=true"
