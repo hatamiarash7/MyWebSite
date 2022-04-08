@@ -1,9 +1,12 @@
-name: 🔐 SSL Check
+name: 🔐 SSL
 
 on:
   workflow_dispatch:
   schedule:
     - cron: "0 13 * * *"
+  push:
+    paths:
+      - ".github/workflows/SSL.yml"
 
 env:
   DOMAIN: https://arash-hatami.ir
