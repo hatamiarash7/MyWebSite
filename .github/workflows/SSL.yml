@@ -2,7 +2,7 @@ name: 🔐 SSL Check
 
 on:
   schedule:
-    - cron: "0 15 * * *"
+    - cron: "0 13 * * *"
 
 env:
   DOMAIN: https://arash-hatami.ir
