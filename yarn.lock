@@ -5412,11 +5412,6 @@ kind-of@^6.0.0, kind-of@^6.0.2:
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
   integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
 
-klona@^2.0.3:
-  version "2.0.4"
-  resolved "https://registry.yarnpkg.com/klona/-/klona-2.0.4.tgz#7bb1e3affb0cb8624547ef7e8f6708ea2e39dfc0"
-  integrity sha512-ZRbnvdg/NxqzC7L9Uyqzf4psi1OM4Cuc+sJAkQPjO6XkQIJTNbfK2Rsmbw8fx1p2mkZdp2FZYo2+LwXYY/uwIA==
-
 knex-migrator@3.4.6:
   version "3.4.6"
   resolved "https://registry.yarnpkg.com/knex-migrator/-/knex-migrator-3.4.6.tgz#0a86822965c8ee282dbc2b12ca3c2bef92923976"
@@ -6374,10 +6369,10 @@ nan@^2.14.0:
   resolved "https://registry.yarnpkg.com/nan/-/nan-2.14.1.tgz#d7be34dfa3105b91494c3147089315eff8874b01"
   integrity sha512-isWHgVjnFjh2x2yuJ/tj3JbwoHu3UC2dX5G/88Cm24yB6YopVgxvBObDY7n5xW6ExmFhJpSEQqFPvq9zaXc8Jw==
 
-nanoid@^3.1.23:
-  version "3.1.23"
-  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.1.23.tgz#f744086ce7c2bc47ee0a8472574d5c78e4183a81"
-  integrity sha512-FiB0kzdP0FFVGDKlRLEQ1BgDzU87dy5NnzjeW9YZNt+/c3+q82EQDUwniSAUxp/F0gFNI1ZhKU1FqYsMuqZVnw==
+nanoid@^3.3.4:
+  version "3.3.4"
+  resolved "https://registry.yarnpkg.com/nanoid/-/nanoid-3.3.4.tgz#730b67e3cd09e2deacf03c027c81c9d9dbc5e8ab"
+  integrity sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==
 
 nanomatch@^1.2.9:
   version "1.2.13"
@@ -7166,6 +7161,11 @@ pg-connection-string@2.2.0:
   resolved "https://registry.yarnpkg.com/pg-connection-string/-/pg-connection-string-2.2.0.tgz#caab4d38a9de4fdc29c9317acceed752897de41c"
   integrity sha512-xB/+wxcpFipUZOQcSzcgkjcNOosGhEoPSjz06jC89lv1dj7mc9bZv6wLVy8M2fVjP0a/xN0N988YDq1L0FhK3A==
 
+picocolors@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/picocolors/-/picocolors-1.0.0.tgz#cb5bdc74ff3f51892236eaf79d68bc44564ab81c"
+  integrity sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==
+
 picomatch@^2.0.4:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/picomatch/-/picomatch-2.2.1.tgz#21bac888b6ed8601f831ce7816e335bc779f0a4a"
@@ -7487,14 +7487,14 @@ postcss@^7.0.0, postcss@^7.0.1, postcss@^7.0.27, postcss@^7.0.31:
     source-map "^0.6.1"
     supports-color "^6.1.0"
 
-postcss@^8.0.2:
-  version "8.2.15"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.2.15.tgz#9e66ccf07292817d226fc315cbbf9bc148fbca65"
-  integrity sha512-2zO3b26eJD/8rb106Qu2o7Qgg52ND5HPjcyQiK2B98O388h43A448LCslC0dI2P97wCAQRJsFvwTRcXxTKds+Q==
+postcss@^8.3.11:
+  version "8.4.16"
+  resolved "https://registry.yarnpkg.com/postcss/-/postcss-8.4.16.tgz#33a1d675fac39941f5f445db0de4db2b6e01d43c"
+  integrity sha512-ipHE1XBvKzm5xI7hiHCZJCSugxvsdq2mPnsq5+UF+VHCjiBvtDrlxJfMBToWaP9D5XlgNmcFGqoHmUn0EYEaRQ==
   dependencies:
-    colorette "^1.2.2"
-    nanoid "^3.1.23"
-    source-map "^0.6.1"
+    nanoid "^3.3.4"
+    picocolors "^1.0.0"
+    source-map-js "^1.0.2"
 
 posthtml-parser@^0.2.0:
   version "0.2.1"
@@ -8259,18 +8259,17 @@ safe-regex@^1.1.0:
   resolved "https://registry.yarnpkg.com/safer-buffer/-/safer-buffer-2.1.2.tgz#44fa161b0187b9549dd84bb91802f9bd8385cd6a"
   integrity sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
 
-sanitize-html@2.3.2:
-  version "2.3.2"
-  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-2.3.2.tgz#a1954aea877a096c408aca7b0c260bef6e4fc402"
-  integrity sha512-p7neuskvC8pSurUjdVmbWPXmc9A4+QpOXIL+4gwFC+av5h+lYCXFT8uEneqsFQg/wEA1IH+cKQA60AaQI6p3cg==
+sanitize-html@2.7.1:
+  version "2.7.1"
+  resolved "https://registry.yarnpkg.com/sanitize-html/-/sanitize-html-2.7.1.tgz#a6c2c1a88054a79eeacfac9b0a43f1b393476901"
+  integrity sha512-oOpe8l4J8CaBk++2haoN5yNI5beekjuHv3JRPKUx/7h40Rdr85pemn4NkvUB3TcBP7yjat574sPlcMAyv4UQig==
   dependencies:
     deepmerge "^4.2.2"
     escape-string-regexp "^4.0.0"
     htmlparser2 "^6.0.0"
     is-plain-object "^5.0.0"
-    klona "^2.0.3"
     parse-srcset "^1.0.2"
-    postcss "^8.0.2"
+    postcss "^8.3.11"
 
 sax@^1.2.4, sax@~1.2.4:
   version "1.2.4"
@@ -8577,6 +8576,11 @@ socks@~2.3.2:
   dependencies:
     ip "1.1.5"
     smart-buffer "^4.1.0"
+
+source-map-js@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
+  integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
 
 source-map-resolve@^0.5.0:
   version "0.5.2"
