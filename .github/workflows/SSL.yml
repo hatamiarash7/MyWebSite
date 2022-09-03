@@ -1,4 +1,4 @@
-name: 🔐 SSL
+name: Check
 
 on:
   workflow_dispatch:
@@ -14,7 +14,7 @@ env:
 jobs:
   SSL:
     runs-on: ubuntu-latest
-    name: Check domain
+    name: 🔐 SSL
 
     steps:
       - name: Check domain SSL and registry expire date
@@ -31,7 +31,7 @@ jobs:
         if: ${{ steps.check-domain.outputs.paid-till-days-left && steps.check-domain.outputs.paid-till-days-left < 10 }}
         uses: rishabhgupta/git-action-issue@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GB_TOKEN }}
           title: ⚠️ ${{ env.DOMAIN }} — registry expiries in ${{ steps.check-domain.outputs.paid-till-days-left }} days
           body: "Paid till: `${{ steps.check-domain.outputs.paid-till-date }}`"
 
@@ -39,6 +39,16 @@ jobs:
         if: ${{ steps.check-domain.outputs.ssl-expire-days-left && steps.check-domain.outputs.ssl-expire-days-left < 10 }}
         uses: rishabhgupta/git-action-issue@v2
         with:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GB_TOKEN }}
           title: 🧨 ${{ env.DOMAIN }} — SSL cert expires in ${{ steps.check-domain.outputs.ssl-expire-days-left }} days
           body: "Valid till: `${{ steps.check-domain.outputs.ssl-expire-date }}`"
+
+  Sitemap:
+    runs-on: ubuntu-latest
+    name: 🕸 Sitemap
+    
+    steps:
+      - name: Check sitemap
+        uses: atymic/sitemap-ping-action@master
+        with:
+          sitemap-url: ${{ secrets.SITEMAP_URL }}
