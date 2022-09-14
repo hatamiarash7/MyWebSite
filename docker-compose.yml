@@ -37,8 +37,8 @@ services:
       - "traefik.http.routers.ghost.middlewares=WebsiteHeader@docker"
       - "traefik.http.services.ghost.loadbalancer.server.port=2369"
       # Configure headers
-      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.Website-Author=ArashHatami"
-      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.Website-Version=3"
+      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.website-author=Arash Hatami"
+      - "traefik.http.middlewares.WebsiteHeader.headers.customresponseheaders.website-version=3"
       - "traefik.http.middlewares.WebsiteHeader.headers.forcestsheader=true"
       - "traefik.http.middlewares.WebsiteHeader.headers.STSPreload=true"
       - "traefik.http.middlewares.WebsiteHeader.headers.ContentTypeNosniff=true"
