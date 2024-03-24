@@ -41,7 +41,7 @@
         "cli": "^1.12.0"
     },
     "dependencies": {
-        "@nexes/nql": "0.4.0",
+        "@nexes/nql": "0.4.1",
         "@sentry/node": "5.18.1",
         "@tryghost/adapter-manager": "0.1.7",
         "@tryghost/errors": "0.2.0",
@@ -76,7 +76,7 @@
         "cheerio": "0.22.0",
         "compression": "1.7.4",
         "connect-slashes": "1.4.0",
-        "cookie-session": "1.4.0",
+        "cookie-session": "2.0.0",
         "cors": "2.8.5",
         "downsize": "0.0.8",
         "express": "4.17.1",
