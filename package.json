@@ -104,7 +104,7 @@
         "knex-migrator": "3.4.6",
         "lodash": "4.17.21",
         "mailgun-js": "0.22.0",
-        "metascraper": "5.11.9",
+        "metascraper": "5.26.0",
         "metascraper-author": "5.11.9",
         "metascraper-description": "5.11.9",
         "metascraper-image": "5.11.9",
