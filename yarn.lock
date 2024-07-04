@@ -393,7 +393,15 @@
   dependencies:
     "@tryghost/errors" "^0.2.0"
 
-"@tryghost/errors@0.2.0", "@tryghost/errors@^0.2.0":
+"@tryghost/errors@0.2.13":
+  version "0.2.13"
+  resolved "https://registry.yarnpkg.com/@tryghost/errors/-/errors-0.2.13.tgz#819550c347f5634706b5a4834dd2db0e7cb0a6f2"
+  integrity sha512-RXREWxDy69LC5t8sW6UuSnUNED1ZT9wKTNCJ2VDdrdS1CTaxmZroaWoKOrGjrQDx/M2IBHJSNZHbnRtkHoJ4hw==
+  dependencies:
+    "@tryghost/ignition-errors" "^0.1.0"
+    lodash "^4.17.21"
+
+"@tryghost/errors@^0.2.0":
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/@tryghost/errors/-/errors-0.2.0.tgz#850fe93db8aceadfe1f9e21b8c3a42599de17808"
   integrity sha512-zYCsJMeNdmNBcJwsFJ4bILGuixGAFdIhzc/TpxFGmzWjordLKWDzL8mnIWvWb5EVeuk0BQnYDg0/V+soodCCBA==
@@ -416,6 +424,14 @@
     "@tryghost/kg-parser-plugins" "0.10.0"
     "@tryghost/mobiledoc-kit" "^0.12.4-ghost.1"
     jsdom "16.2.2"
+
+"@tryghost/ignition-errors@^0.1.0":
+  version "0.1.8"
+  resolved "https://registry.yarnpkg.com/@tryghost/ignition-errors/-/ignition-errors-0.1.8.tgz#6d4c4d4e02d32403ca1e574eaa91b3c0d138d6f6"
+  integrity sha512-4KYU+kDXZyP7tmzyHiUkfDy9RWxKAtA/6xTGdxYHurE5ZlT++cDDfdUtF0v3308GGUzKlBzRc3jmLjDYpngcBQ==
+  dependencies:
+    lodash "^4.17.21"
+    uuid "^8.3.2"
 
 "@tryghost/image-transform@1.0.0":
   version "1.0.0"
@@ -5706,7 +5722,7 @@ lodash@4.17.15:
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
   integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
 
-lodash@4.17.21, lodash@^4.14.2, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.7.0, lodash@^4.8.0, lodash@~4.17.10, lodash@~4.17.15, lodash@~4.17.5:
+lodash@4.17.21, lodash@^4.14.2, lodash@^4.15.0, lodash@^4.16.4, lodash@^4.17.10, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.21, lodash@^4.7.0, lodash@^4.8.0, lodash@~4.17.10, lodash@~4.17.15, lodash@~4.17.5:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
@@ -9647,6 +9663,11 @@ uuid@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-7.0.1.tgz#95ed6ff3d8c881cbf85f0f05cc3915ef994818ef"
   integrity sha512-yqjRXZzSJm9Dbl84H2VDHpM3zMjzSJQ+hn6C4zqd5ilW+7P4ZmLEEqwho9LjP+tGuZlF4xrHQXT0h9QZUS/pWA==
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache@^2.0.3:
   version "2.1.0"
