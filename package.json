@@ -97,7 +97,7 @@
         "intl-messageformat": "5.4.3",
         "js-yaml": "3.14.0",
         "jsonpath": "1.0.2",
-        "jsonwebtoken": "8.5.1",
+        "jsonwebtoken": "9.0.0",
         "juice": "6.0.0",
         "keypair": "1.0.4",
         "knex": "0.21.1",
